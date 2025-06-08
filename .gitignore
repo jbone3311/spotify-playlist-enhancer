@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+ENV/
+env/
+.Python
+
+# dotenv
+.env
+.env.*
+
+# Streamlit
+.streamlit/
+
+# VSCode
+.vscode/ 
