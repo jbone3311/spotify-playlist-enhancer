@@ -7,6 +7,7 @@ import pandas as pd
 import plotly.express as px
 from typing import Dict, List, Optional
 import json
+import logging
 
 from core import (
     init_spotify_client,
@@ -16,6 +17,13 @@ from core import (
     fetch_audio_features,
     PlaylistInfo
 )
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Page config
 st.set_page_config(
@@ -56,19 +64,26 @@ def main() -> None:
     """Main Streamlit application."""
     st.title("🎵 Spotify Playlist Enhancer")
     
-    # Initialize session state
-    if 'client' not in st.session_state:
-        try:
-            st.session_state.client = init_spotify_client()
-        except Exception as e:
-            st.error(f"Failed to initialize Spotify client: {e}")
-            return
+    # Status section
+    with st.expander("Connection Status", expanded=True):
+        if 'client' not in st.session_state:
+            try:
+                st.info("Initializing Spotify client...")
+                st.session_state.client = init_spotify_client()
+                st.success("Successfully connected to Spotify!")
+            except Exception as e:
+                st.error(f"Failed to initialize Spotify client: {e}")
+                st.error("Please check your .env file and make sure your credentials are correct.")
+                return
+        else:
+            st.success("Connected to Spotify")
     
     # Sidebar controls
     st.sidebar.header("Options")
     
     # Fetch playlists
     try:
+        st.sidebar.info("Fetching your playlists...")
         playlists = fetch_user_playlists(st.session_state.client)
         playlist_names = [p.name for p in playlists]
         playlist_names.insert(0, "Liked Songs")
@@ -77,6 +92,7 @@ def main() -> None:
             "Select Playlist",
             playlist_names
         )
+        st.sidebar.success(f"Found {len(playlists)} playlists")
     except Exception as e:
         st.error(f"Failed to fetch playlists: {e}")
         return
@@ -102,15 +118,20 @@ def main() -> None:
             try:
                 # Fetch tracks
                 if selected_playlist == "Liked Songs":
+                    st.info("Fetching your liked tracks...")
                     track_uris = fetch_liked_tracks(st.session_state.client)
                 else:
+                    st.info(f"Fetching tracks from {selected_playlist}...")
                     playlist = playlists[playlist_names.index(selected_playlist) - 1]
                     track_uris = get_playlist_track_uris(
                         st.session_state.client,
                         playlist.id
                     )
                 
+                st.info(f"Found {len(track_uris)} tracks")
+                
                 # Fetch audio features
+                st.info("Analyzing audio features...")
                 features = fetch_audio_features(
                     st.session_state.client,
                     track_uris

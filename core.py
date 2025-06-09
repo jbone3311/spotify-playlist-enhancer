@@ -18,12 +18,30 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Constants
+REDIRECT_URI = "http://127.0.0.1:8888/callback"
+
 @dataclass
 class PlaylistInfo:
     """Container for playlist metadata."""
     id: str
     name: str
     track_count: int
+
+def verify_env_variables() -> None:
+    """Verify and log environment variables."""
+    load_dotenv()
+    
+    client_id = os.getenv('SPOTIFY_CLIENT_ID')
+    client_secret = os.getenv('SPOTIFY_CLIENT_SECRET')
+    
+    logger.info("Environment Variables Status:")
+    logger.info(f"SPOTIFY_CLIENT_ID: {'✓ Set' if client_id else '✗ Missing'}")
+    logger.info(f"SPOTIFY_CLIENT_SECRET: {'✓ Set' if client_secret else '✗ Missing'}")
+    logger.info(f"REDIRECT_URI: {REDIRECT_URI}")
+    
+    if not client_id or not client_secret:
+        raise ValueError("Missing required environment variables. Please check your .env file.")
 
 def init_spotify_client() -> spotipy.Spotify:
     """
@@ -35,13 +53,7 @@ def init_spotify_client() -> spotipy.Spotify:
     Raises:
         ValueError: If required environment variables are missing
     """
-    load_dotenv()
-    
-    required_vars = ['SPOTIFY_CLIENT_ID', 'SPOTIFY_CLIENT_SECRET', 'SPOTIFY_REDIRECT_URI']
-    missing = [var for var in required_vars if not os.getenv(var)]
-    
-    if missing:
-        raise ValueError(f"Missing required environment variables: {', '.join(missing)}")
+    verify_env_variables()
     
     scope = [
         'playlist-read-private',
@@ -51,10 +63,15 @@ def init_spotify_client() -> spotipy.Spotify:
     ]
     
     try:
+        logger.info("Initializing Spotify client with:")
+        logger.info(f"Client ID: {os.getenv('SPOTIFY_CLIENT_ID')[:8]}...")
+        logger.info(f"Redirect URI: {REDIRECT_URI}")
+        logger.info(f"Scopes: {', '.join(scope)}")
+        
         client = spotipy.Spotify(auth_manager=SpotifyOAuth(
             client_id=os.getenv('SPOTIFY_CLIENT_ID'),
             client_secret=os.getenv('SPOTIFY_CLIENT_SECRET'),
-            redirect_uri=os.getenv('SPOTIFY_REDIRECT_URI'),
+            redirect_uri=REDIRECT_URI,
             scope=scope
         ))
         logger.info("Successfully initialized Spotify client")
