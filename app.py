@@ -18,7 +18,9 @@ from core import (
     fetch_liked_tracks,
     get_playlist_track_uris,
     fetch_audio_features,
-    PlaylistInfo
+    fetch_playlist_tracks_with_metadata,
+    PlaylistInfo,
+    TrackMetadata
 )
 
 # Configure logging
@@ -71,7 +73,7 @@ def create_audio_features_plot(df: pd.DataFrame, feature: str, title: str) -> go
     
     return fig
 
-def display_track_table(tracks: List[dict], features: Dict[str, dict]) -> None:
+def display_track_table(tracks: List[TrackMetadata], features: Dict[str, dict]) -> None:
     """Display tracks in a spreadsheet format with analysis data."""
     if not tracks:
         st.warning("No tracks to display.")
@@ -79,7 +81,8 @@ def display_track_table(tracks: List[dict], features: Dict[str, dict]) -> None:
         
     # Create DataFrame with track info and audio features
     data = []
-    for track in tracks:
+    for track_meta in tracks:
+        track = track_meta.track
         # Basic track info from Spotify API
         track_info = {
             'Name': track['name'],
@@ -87,6 +90,7 @@ def display_track_table(tracks: List[dict], features: Dict[str, dict]) -> None:
             'Album': track['album']['name'],
             'Album Type': track['album']['album_type'],
             'Release Date': track['album']['release_date'],
+            'Added At': track_meta.added_at,
             'Duration': format_duration(track['duration_ms']),
             'Duration (ms)': track['duration_ms'],
             'Popularity': track['popularity'],
@@ -96,10 +100,11 @@ def display_track_table(tracks: List[dict], features: Dict[str, dict]) -> None:
             'Preview URL': track['preview_url'] if track['preview_url'] else 'N/A',
             'ISRC': track['external_ids'].get('isrc', 'N/A'),
             'Available Markets': len(track['available_markets']),
-            'URI': track['uri']
+            'URI': track['uri'],
+            'Genres': ', '.join(track_meta.genres) if track_meta.genres else 'N/A'
         }
         
-        # Add audio features if available (exactly as returned by Spotify API)
+        # Add audio features if available
         if track['uri'] in features:
             feature = features[track['uri']]
             track_info.update({
@@ -122,76 +127,82 @@ def display_track_table(tracks: List[dict], features: Dict[str, dict]) -> None:
     df = pd.DataFrame(data)
     
     # Create tabs for different views
-    tab1, tab2, tab3 = st.tabs(["Track Details", "Audio Features", "Analysis"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Track Details", "Audio Features", "Analysis", "Genres"])
     
     with tab1:
-        # Add search and filter controls
-        col1, col2 = st.columns([2, 1])
-        with col1:
-            search = st.text_input("🔍 Search tracks", "")
-        with col2:
-            sort_by = st.selectbox(
-                "Sort by",
-                ["Name", "Artists", "Album", "Duration", "Popularity", "Release Date"]
-            )
+        # Display track details in a spreadsheet format
+        st.dataframe(
+            df[[
+                'Name', 'Artists', 'Album', 'Release Date', 'Added At',
+                'Duration', 'Popularity', 'Explicit', 'Genres'
+            ]],
+            use_container_width=True
+        )
         
-        # Filter and sort the dataframe
-        if search:
-            mask = df.apply(lambda x: x.astype(str).str.contains(search, case=False).any(), axis=1)
-            df_display = df[mask]
-        else:
-            df_display = df
+        # Allow sorting by any column
+        st.subheader("Sort Tracks")
+        sort_by = st.selectbox(
+            "Sort by",
+            ['Name', 'Artists', 'Album', 'Release Date', 'Added At', 'Duration', 'Popularity', 'Genres']
+        )
+        sort_order = st.radio("Sort order", ["Ascending", "Descending"])
+        
+        sorted_df = df.sort_values(
+            by=sort_by,
+            ascending=(sort_order == "Ascending")
+        )
+        
+        # Display sorted results
+        st.dataframe(
+            sorted_df[[
+                'Name', 'Artists', 'Album', 'Release Date', 'Added At',
+                'Duration', 'Popularity', 'Explicit', 'Genres'
+            ]],
+            use_container_width=True
+        )
+        
+        # Detailed view of selected track
+        st.subheader("Track Details")
+        selected_track = st.selectbox(
+            "Select a track to view details",
+            sorted_df['Name'].tolist()
+        )
+        
+        track = sorted_df[sorted_df['Name'] == selected_track].iloc[0]
+        
+        with st.expander(f"{track['Name']} - {track['Artists']}", expanded=False):
+            col1, col2 = st.columns(2)
+            with col1:
+                st.write("**Basic Information**")
+                st.write(f"Album: {track['Album']}")
+                st.write(f"Release Date: {track['Release Date']}")
+                st.write(f"Added to Playlist: {track['Added At']}")
+                st.write(f"Duration: {track['Duration']}")
+                st.write(f"Popularity: {track['Popularity']}")
+                st.write(f"Explicit: {'Yes' if track['Explicit'] else 'No'}")
+                st.write(f"Track Number: {track['Track Number']}")
+                st.write(f"Disc Number: {track['Disc Number']}")
+                st.write(f"Available Markets: {track['Available Markets']}")
+                st.write(f"Genres: {track['Genres']}")
             
-        if sort_by:
-            df_display = df_display.sort_values(by=sort_by)
-        
-        # Display track information in a more organized way
-        for _, track in df_display.iterrows():
-            with st.expander(f"{track['Name']} - {track['Artists']}", expanded=False):
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.write("**Basic Information**")
-                    st.write(f"Album: {track['Album']}")
-                    st.write(f"Release Date: {track['Release Date']}")
-                    st.write(f"Duration: {track['Duration']}")
-                    st.write(f"Popularity: {track['Popularity']}")
-                    st.write(f"Explicit: {'Yes' if track['Explicit'] else 'No'}")
-                    st.write(f"Track Number: {track['Track Number']}")
-                    st.write(f"Disc Number: {track['Disc Number']}")
-                    st.write(f"Available Markets: {track['Available Markets']}")
-                
-                with col2:
-                    if 'Tempo' in track:
-                        st.write("**Audio Features**")
-                        st.write(f"Danceability: {track['Danceability']:.2f}")
-                        st.write(f"Energy: {track['Energy']:.2f}")
-                        st.write(f"Loudness: {track['Loudness']:.2f} dB")
-                        st.write(f"Speechiness: {track['Speechiness']:.2f}")
-                        st.write(f"Acousticness: {track['Acousticness']:.2f}")
-                        st.write(f"Instrumentalness: {track['Instrumentalness']:.2f}")
-                        st.write(f"Liveness: {track['Liveness']:.2f}")
-                        st.write(f"Valence: {track['Valence']:.2f}")
-                        st.write(f"Tempo: {track['Tempo']:.1f} BPM")
-                        st.write(f"Time Signature: {track['Time Signature']}/4")
-        
-        # Export button
-        if st.button("Export Analysis to JSON"):
-            export_data = {
-                "timestamp": datetime.now().isoformat(),
-                "tracks": data,
-                "audio_features": features
-            }
-            
-            json_str = json.dumps(export_data, indent=2)
-            st.download_button(
-                label="Download Analysis",
-                data=json_str,
-                file_name=f"playlist_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
-                mime="application/json"
-            )
+            with col2:
+                if 'Tempo' in track:
+                    st.write("**Audio Features**")
+                    st.write(f"Danceability: {track['Danceability']:.2f}")
+                    st.write(f"Energy: {track['Energy']:.2f}")
+                    st.write(f"Loudness: {track['Loudness']:.2f} dB")
+                    st.write(f"Speechiness: {track['Speechiness']:.2f}")
+                    st.write(f"Acousticness: {track['Acousticness']:.2f}")
+                    st.write(f"Instrumentalness: {track['Instrumentalness']:.2f}")
+                    st.write(f"Liveness: {track['Liveness']:.2f}")
+                    st.write(f"Valence: {track['Valence']:.2f}")
+                    st.write(f"Tempo: {track['Tempo']:.1f} BPM")
+                    st.write(f"Time Signature: {track['Time Signature']}/4")
+                else:
+                    st.warning("Audio features not available for this track")
     
     with tab2:
-        if 'Tempo' in df:
+        if 'Tempo' in df.columns:
             # Create a grid of audio feature plots
             st.subheader("Audio Features Distribution")
             
@@ -246,151 +257,121 @@ def display_track_table(tracks: List[dict], features: Dict[str, dict]) -> None:
                     create_audio_features_plot(df, 'Liveness', 'Liveness Distribution'),
                     use_container_width=True
                 )
-            
-            # Fifth row: Loudness
-            st.plotly_chart(
-                create_audio_features_plot(df, 'Loudness', 'Loudness Distribution (dB)'),
-                use_container_width=True
-            )
+        else:
+            st.warning("Audio features are not available for any tracks in this playlist")
     
     with tab3:
-        if 'Tempo' in df:
-            # Create correlation heatmap
-            st.subheader("Audio Features Correlation")
-            audio_features = [
-                'Danceability', 'Energy', 'Loudness', 'Speechiness',
-                'Acousticness', 'Instrumentalness', 'Liveness', 'Valence',
-                'Tempo'
-            ]
+        st.subheader("Playlist Statistics")
+        
+        # Basic stats
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Total Tracks", len(df))
+            st.metric("Unique Artists", df['Artists'].nunique())
+        with col2:
+            st.metric("Unique Albums", df['Album'].nunique())
+            st.metric("Average Duration", format_duration(int(df['Duration (ms)'].mean())))
+        with col3:
+            st.metric("Average Popularity", f"{df['Popularity'].mean():.1f}")
+            if 'Tempo' in df:
+                st.metric("Average Tempo", f"{df['Tempo'].mean():.1f} BPM")
+        
+        # Release date range
+        st.subheader("Release Date Range")
+        release_dates = pd.to_datetime(df['Release Date'], errors='coerce')
+        if not release_dates.isna().all():
+            st.write(f"From {release_dates.min().strftime('%Y-%m-%d')} to {release_dates.max().strftime('%Y-%m-%d')}")
+        
+        # Album types distribution
+        st.subheader("Album Types")
+        album_types = df['Album Type'].value_counts()
+        st.bar_chart(album_types)
+        
+        # Preview availability
+        st.subheader("Preview Availability")
+        preview_available = df['Preview URL'].ne('N/A').sum()
+        st.write(f"{preview_available} tracks have previews available")
+    
+    with tab4:
+        st.subheader("Genre Analysis")
+        
+        # Get all genres and their counts
+        all_genres = []
+        for genres in df['Genres']:
+            if genres != 'N/A':
+                all_genres.extend([g.strip() for g in genres.split(',')])
+        
+        if all_genres:
+            genre_counts = pd.Series(all_genres).value_counts()
             
-            corr = df[audio_features].corr()
-            fig = px.imshow(
-                corr,
-                title="Audio Features Correlation",
-                color_continuous_scale="RdBu",
-                aspect="auto"
+            # Display top genres
+            st.write("Top Genres")
+            st.bar_chart(genre_counts.head(20))
+            
+            # Display genre distribution
+            st.write("Genre Distribution")
+            fig = px.pie(
+                values=genre_counts.values,
+                names=genre_counts.index,
+                title="Genre Distribution"
             )
             st.plotly_chart(fig, use_container_width=True)
             
-            # Display key statistics
-            st.subheader("Playlist Statistics")
+            # Display tracks by genre
+            st.write("Tracks by Genre")
+            selected_genre = st.selectbox(
+                "Select a genre to view tracks",
+                sorted(genre_counts.index)
+            )
             
-            # Basic Statistics
-            st.write("### Basic Information")
-            col1, col2, col3, col4 = st.columns(4)
-            
-            with col1:
-                st.metric("Total Tracks", len(df))
-                st.metric("Unique Artists", df['Artists'].nunique())
-                st.metric("Unique Albums", df['Album'].nunique())
-            
-            with col2:
-                st.metric("Average Duration", format_duration(int(df['Duration (ms)'].mean())))
-                st.metric("Average Popularity", f"{df['Popularity'].mean():.1f}")
-                st.metric("Total Duration", format_duration(int(df['Duration (ms)'].sum())))
-            
-            with col3:
-                st.metric("Explicit Tracks", df['Explicit'].sum())
-                st.metric("Available Markets (avg)", f"{df['Available Markets'].mean():.1f}")
-                st.metric("Release Date Range", f"{df['Release Date'].min()} to {df['Release Date'].max()}")
-            
-            with col4:
-                st.metric("Album Types", df['Album Type'].nunique())
-                st.metric("Tracks with Preview", df['Preview URL'].ne('N/A').sum())
-                st.metric("Tracks with ISRC", df['ISRC'].ne('N/A').sum())
-            
-            # Audio Features Statistics
-            st.write("### Audio Features Statistics")
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                st.write("**Tempo**")
-                st.write(f"Average: {df['Tempo'].mean():.1f} BPM")
-                st.write(f"Range: {df['Tempo'].min():.1f} - {df['Tempo'].max():.1f} BPM")
-                st.write(f"Standard Deviation: {df['Tempo'].std():.1f} BPM")
-                
-                st.write("**Energy**")
-                st.write(f"Average: {df['Energy'].mean():.2f}")
-                st.write(f"Range: {df['Energy'].min():.2f} - {df['Energy'].max():.2f}")
-                st.write(f"Standard Deviation: {df['Energy'].std():.2f}")
-                
-                st.write("**Danceability**")
-                st.write(f"Average: {df['Danceability'].mean():.2f}")
-                st.write(f"Range: {df['Danceability'].min():.2f} - {df['Danceability'].max():.2f}")
-                st.write(f"Standard Deviation: {df['Danceability'].std():.2f}")
-            
-            with col2:
-                st.write("**Loudness**")
-                st.write(f"Average: {df['Loudness'].mean():.1f} dB")
-                st.write(f"Range: {df['Loudness'].min():.1f} - {df['Loudness'].max():.1f} dB")
-                st.write(f"Standard Deviation: {df['Loudness'].std():.1f} dB")
-                
-                st.write("**Valence**")
-                st.write(f"Average: {df['Valence'].mean():.2f}")
-                st.write(f"Range: {df['Valence'].min():.2f} - {df['Valence'].max():.2f}")
-                st.write(f"Standard Deviation: {df['Valence'].std():.2f}")
-                
-                st.write("**Acousticness**")
-                st.write(f"Average: {df['Acousticness'].mean():.2f}")
-                st.write(f"Range: {df['Acousticness'].min():.2f} - {df['Acousticness'].max():.2f}")
-                st.write(f"Standard Deviation: {df['Acousticness'].std():.2f}")
+            genre_tracks = df[df['Genres'].str.contains(selected_genre, na=False)]
+            st.dataframe(
+                genre_tracks[['Name', 'Artists', 'Album', 'Release Date', 'Popularity']],
+                use_container_width=True
+            )
+        else:
+            st.warning("No genre information available for tracks in this playlist")
 
 def main() -> None:
-    """Main Streamlit application."""
+    """Main Streamlit app entry point."""
     st.title("📊 Spotify Playlist Analyzer")
     st.markdown("A data analysis and LLM-powered tool for playlist management")
     
-    # Create a container for status messages at the bottom
-    status_container = st.container()
-    
-    # Status section
-    with st.expander("Connection Status", expanded=True):
-        if 'client' not in st.session_state:
-            try:
-                st.info("Initializing Spotify client...")
-                st.session_state.client = init_spotify_client()
-                st.success("Successfully connected to Spotify!")
-            except Exception as e:
-                st.error(f"Failed to initialize Spotify client: {e}")
-                st.error("Please check your .env file and make sure your credentials are correct.")
-                return
-        else:
-            st.success("Connected to Spotify")
-            st.info("Ready to analyze playlists")
+    # Initialize session state
+    if 'client' not in st.session_state:
+        try:
+            st.session_state.client = init_spotify_client()
+            st.sidebar.success("Connected to Spotify")
+        except Exception as e:
+            st.sidebar.error(f"Failed to connect to Spotify: {str(e)}")
+            return
     
     # Sidebar controls
     st.sidebar.header("Analysis Options")
     
     # Fetch playlists
+    st.sidebar.info("Fetching your playlists...")
     try:
-        st.sidebar.info("Fetching your playlists...")
         playlists = fetch_user_playlists(st.session_state.client)
-        playlist_names = [p.name for p in playlists]
-        playlist_names.insert(0, "Liked Songs")
-        
-        selected_playlist = st.sidebar.selectbox(
-            "Select Playlist",
-            playlist_names
-        )
+        if not playlists:
+            st.sidebar.warning("No playlists found. Please create a playlist in Spotify first.")
+            return
+            
+        playlist_names = ["Liked Songs"] + [p.name for p in playlists]
         st.sidebar.success(f"Found {len(playlists)} playlists")
     except Exception as e:
-        st.error(f"Failed to fetch playlists: {e}")
+        st.sidebar.error(f"Failed to fetch playlists: {str(e)}")
+        logger.error(f"Error fetching playlists: {e}", exc_info=True)
         return
     
-    # Analysis options
-    st.sidebar.subheader("Analysis Options")
-    tempo_buckets = st.sidebar.checkbox("Create Tempo Buckets")
-    energy_buckets = st.sidebar.checkbox("Create Energy Buckets")
-    llm_recommendations = st.sidebar.checkbox("Get LLM Recommendations")
-    shuffle = st.sidebar.checkbox("Shuffle Playlist")
+    # Playlist selection
+    selected_playlist = st.sidebar.selectbox(
+        "Select Playlist",
+        playlist_names
+    )
     
-    if llm_recommendations:
-        num_recommendations = st.sidebar.slider(
-            "Number of Recommendations",
-            min_value=1,
-            max_value=20,
-            value=5
-        )
+    # Status container for progress messages
+    status_container = st.empty()
     
     # Process button
     if st.sidebar.button("Run Analysis"):
@@ -402,49 +383,52 @@ def main() -> None:
                 if selected_playlist == "Liked Songs":
                     st.info("Fetching your liked tracks...")
                     track_uris = fetch_liked_tracks(st.session_state.client)
+                    # For liked songs, we don't have added_at metadata
+                    tracks = []
+                    for i in range(0, len(track_uris), 50):
+                        batch = track_uris[i:i + 50]
+                        results = st.session_state.client.tracks(batch)
+                        for track in results['tracks']:
+                            tracks.append(TrackMetadata(
+                                uri=track['uri'],
+                                added_at="N/A",  # Liked songs don't have added_at
+                                track=track
+                            ))
                 else:
                     st.info(f"Fetching tracks from {selected_playlist}...")
                     playlist = playlists[playlist_names.index(selected_playlist) - 1]
-                    track_uris = get_playlist_track_uris(
+                    tracks = fetch_playlist_tracks_with_metadata(
                         st.session_state.client,
                         playlist.id
                     )
                 
-                st.success(f"Found {len(track_uris)} tracks")
-                
-                # Fetch track details
-                st.info("Fetching track details...")
-                tracks = []
-                for i in range(0, len(track_uris), 50):
-                    batch = track_uris[i:i + 50]
-                    results = st.session_state.client.tracks(batch)
-                    tracks.extend(results['tracks'])
-                st.success(f"Fetched details for {len(tracks)} tracks")
+                if not tracks:
+                    st.warning("No tracks found in the selected playlist.")
+                    return
+                    
+                st.success(f"Found {len(tracks)} tracks")
                 
                 # Fetch audio features
                 st.info("Analyzing audio features...")
-                features = fetch_audio_features(
-                    st.session_state.client,
-                    track_uris
-                )
-                st.success(f"Analyzed {len(features)} tracks")
+                track_uris = [track.uri for track in tracks]
+                try:
+                    features = fetch_audio_features(
+                        st.session_state.client,
+                        track_uris
+                    )
+                    st.success(f"Analyzed {len(features)} tracks")
+                except Exception as e:
+                    st.error(f"Failed to fetch audio features: {str(e)}")
+                    st.warning("Some features may be missing. The analysis will be incomplete.")
+                    features = {}
                 
                 # Display results
                 st.header("Track Analysis")
                 display_track_table(tracks, features)
                 
-                # TODO: Implement remaining features
-                if tempo_buckets:
-                    st.info("Tempo bucketing not yet implemented")
-                if energy_buckets:
-                    st.info("Energy bucketing not yet implemented")
-                if llm_recommendations:
-                    st.info("LLM recommendations not yet implemented")
-                if shuffle:
-                    st.info("Playlist shuffle not yet implemented")
-                
             except Exception as e:
-                st.error(f"Error during analysis: {e}")
+                st.error(f"Error during analysis: {str(e)}")
+                logger.error(f"Error in main: {e}", exc_info=True)
 
 if __name__ == '__main__':
     main() 
