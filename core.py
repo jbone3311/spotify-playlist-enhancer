@@ -59,7 +59,17 @@ def init_spotify_client() -> spotipy.Spotify:
         'playlist-read-private',
         'playlist-modify-private',
         'user-library-read',
-        'user-library-modify'
+        'user-library-modify',
+        'user-read-private',
+        'user-read-email',
+        'user-top-read',
+        'user-read-recently-played',
+        'user-read-currently-playing',
+        'user-read-playback-state',
+        'user-modify-playback-state',
+        'streaming',
+        'app-remote-control',
+        'user-read-playback-position'
     ]
     
     try:
@@ -211,13 +221,25 @@ def fetch_audio_features(client: spotipy.Spotify, track_uris: List[str]) -> Dict
     for i in range(0, len(track_uris), batch_size):
         batch = track_uris[i:i + batch_size]
         try:
-            results = client.audio_features(batch)
+            # Extract track IDs from URIs (spotify:track:ID)
+            track_ids = [uri.split(':')[-1] for uri in batch]
+            logger.info(f"Fetching audio features for batch {i//batch_size + 1} ({len(track_ids)} tracks)")
+            results = client.audio_features(track_ids)
+            
+            if not results:
+                logger.warning(f"No results returned for batch {i//batch_size + 1}")
+                continue
+                
             for uri, feature in zip(batch, results):
                 if feature:  # Skip None features
                     features[uri] = feature
+                else:
+                    logger.warning(f"No features available for track {uri}")
+                    
         except Exception as e:
-            logger.error(f"Error fetching audio features: {e}")
+            logger.error(f"Error fetching audio features for batch {i//batch_size + 1}: {str(e)}")
+            logger.error(f"First track ID in batch: {track_ids[0] if track_ids else 'None'}")
             continue
     
-    logger.info(f"Fetched audio features for {len(features)} tracks")
+    logger.info(f"Successfully fetched audio features for {len(features)} out of {len(track_uris)} tracks")
     return features 
