@@ -340,9 +340,12 @@ def main() -> None:
     # Initialize session state
     if 'client' not in st.session_state:
         try:
+            logger.info("Initializing Spotify client...")
             st.session_state.client = init_spotify_client()
+            logger.info("Successfully initialized Spotify client")
             st.sidebar.success("Connected to Spotify")
         except Exception as e:
+            logger.error(f"Failed to initialize Spotify client: {e}", exc_info=True)
             st.sidebar.error(f"Failed to connect to Spotify: {str(e)}")
             return
     
@@ -352,16 +355,19 @@ def main() -> None:
     # Fetch playlists
     st.sidebar.info("Fetching your playlists...")
     try:
+        logger.info("Fetching user playlists...")
         playlists = fetch_user_playlists(st.session_state.client)
         if not playlists:
+            logger.warning("No playlists found")
             st.sidebar.warning("No playlists found. Please create a playlist in Spotify first.")
             return
             
         playlist_names = ["Liked Songs"] + [p.name for p in playlists]
+        logger.info(f"Found {len(playlists)} playlists: {playlist_names}")
         st.sidebar.success(f"Found {len(playlists)} playlists")
     except Exception as e:
+        logger.error(f"Failed to fetch playlists: {e}", exc_info=True)
         st.sidebar.error(f"Failed to fetch playlists: {str(e)}")
-        logger.error(f"Error fetching playlists: {e}", exc_info=True)
         return
     
     # Playlist selection
@@ -369,6 +375,7 @@ def main() -> None:
         "Select Playlist",
         playlist_names
     )
+    logger.info(f"Selected playlist: {selected_playlist}")
     
     # Status container for progress messages
     status_container = st.empty()
@@ -381,11 +388,15 @@ def main() -> None:
             try:
                 # Fetch tracks
                 if selected_playlist == "Liked Songs":
+                    logger.info("Fetching liked tracks...")
                     st.info("Fetching your liked tracks...")
                     track_uris = fetch_liked_tracks(st.session_state.client)
+                    logger.info(f"Found {len(track_uris)} liked tracks")
+                    
                     # For liked songs, we don't have added_at metadata
                     tracks = []
                     for i in range(0, len(track_uris), 50):
+                        logger.info(f"Fetching track details for batch {i//50 + 1}")
                         batch = track_uris[i:i + 50]
                         results = st.session_state.client.tracks(batch)
                         for track in results['tracks']:
@@ -395,6 +406,7 @@ def main() -> None:
                                 track=track
                             ))
                 else:
+                    logger.info(f"Fetching tracks from playlist: {selected_playlist}")
                     st.info(f"Fetching tracks from {selected_playlist}...")
                     playlist = playlists[playlist_names.index(selected_playlist) - 1]
                     tracks = fetch_playlist_tracks_with_metadata(
@@ -403,12 +415,15 @@ def main() -> None:
                     )
                 
                 if not tracks:
+                    logger.warning("No tracks found in selected playlist")
                     st.warning("No tracks found in the selected playlist.")
                     return
                     
+                logger.info(f"Successfully fetched {len(tracks)} tracks")
                 st.success(f"Found {len(tracks)} tracks")
                 
                 # Fetch audio features
+                logger.info("Starting audio features analysis...")
                 st.info("Analyzing audio features...")
                 track_uris = [track.uri for track in tracks]
                 try:
@@ -416,19 +431,22 @@ def main() -> None:
                         st.session_state.client,
                         track_uris
                     )
+                    logger.info(f"Successfully analyzed {len(features)} tracks")
                     st.success(f"Analyzed {len(features)} tracks")
                 except Exception as e:
+                    logger.error(f"Failed to fetch audio features: {e}", exc_info=True)
                     st.error(f"Failed to fetch audio features: {str(e)}")
                     st.warning("Some features may be missing. The analysis will be incomplete.")
                     features = {}
                 
                 # Display results
+                logger.info("Displaying track analysis...")
                 st.header("Track Analysis")
                 display_track_table(tracks, features)
                 
             except Exception as e:
+                logger.error(f"Error during analysis: {e}", exc_info=True)
                 st.error(f"Error during analysis: {str(e)}")
-                logger.error(f"Error in main: {e}", exc_info=True)
 
 if __name__ == '__main__':
     main() 

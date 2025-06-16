@@ -1,0 +1,155 @@
+2025-06-15 17:04:58,553 - core - INFO - Environment Variables Status:
+2025-06-15 17:04:58,553 - core - INFO - SPOTIFY_CLIENT_ID: ✓ Set
+2025-06-15 17:04:58,553 - core - INFO - SPOTIFY_CLIENT_SECRET: ✓ Set
+2025-06-15 17:04:58,553 - core - INFO - REDIRECT_URI: http://127.0.0.1:8888/callback
+2025-06-15 17:04:58,553 - core - INFO - Initializing Spotify client with:
+2025-06-15 17:04:58,553 - core - INFO - Client ID: d48796a6...
+2025-06-15 17:04:58,553 - core - INFO - Redirect URI: http://127.0.0.1:8888/callback
+2025-06-15 17:04:58,553 - core - INFO - Scopes: playlist-read-private, playlist-modify-private, user-library-read, user-library-modify, user-read-private, user-read-email, user-top-read, user-read-recently-played, user-read-currently-playing, user-read-playback-state, user-modify-playback-state, streaming, app-remote-control, user-read-playback-position, user-read-private
+2025-06-15 17:04:58,554 - core - INFO - Successfully initialized Spotify client
+2025-06-15 17:04:58,554 - core - INFO - Starting to fetch user playlists...
+2025-06-15 17:04:58,554 - core - INFO - Using client: <spotipy.client.Spotify object at 0x104f7e120>
+2025-06-15 17:04:58,731 - core - INFO - Successfully authenticated as user: jimleff3311
+2025-06-15 17:04:58,732 - core - INFO - Fetching playlists batch: offset=0, limit=50
+2025-06-15 17:04:58,940 - core - INFO - Received 32 playlists in this batch
+2025-06-15 17:04:58,940 - core - INFO - Found playlist: Half Liked Songs (ID: 28uaGv7ci5ifpcJwDuEFdN, Tracks: 192)
+2025-06-15 17:04:58,940 - core - INFO - Found playlist: Background Chillin’ (ID: 0mp012vffLsDFPd1nKzRIs, Tracks: 13)
+2025-06-15 17:04:58,940 - core - INFO - Found playlist: New Orleans Street Jazz (ID: 64K0hat6AdRxzfdOg90UFC, Tracks: 31)
+2025-06-15 17:04:58,940 - core - INFO - Found playlist: Whiskey Blues 🥃 Best Of Slow Blues/Rock 🎸 Fantastic Electric Guitar Blues (ID: 3ilGPwFb1Qy639q6ufE6Mz, Tracks: 151)
+2025-06-15 17:04:58,940 - core - INFO - Found playlist: Classical chill (ID: 6WRdcYKHlD3xBU4HJhJqc5, Tracks: 2)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Ultra Music Festival 2025 (ID: 1XyyYmwVXc7RJxY679imgE, Tracks: 173)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Best of Cristian Marchi (ID: 1GZ3Cseq9Dg3a4MjVBVM8v, Tracks: 36)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Forever Midnight NYE 2024 Official Playlist (ID: 0f4wLwkGaJmCtuHnY5WgIH, Tracks: 57)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: EDM Classics (Top 100) (ID: 1lS6v9h4MXOw6f6y8MkS8w, Tracks: 73)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Mexico Beach Vibes (ID: 5zzQdotIfFs2xNnGhs6Y9k, Tracks: 121)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: K-Chill (ID: 11FWrs6EzmJEAOnZ3Lmwgt, Tracks: 5)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Kid Rock — All Summer Long (ID: 7Iimyu7LO8zXp64mI2atZJ, Tracks: 1063)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: EDM by DjBone (ID: 1WUj0H8iRm8pF2HbxkX9lx, Tracks: 129)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: House (ID: 5liN3rG97Pj9c1BXemij9j, Tracks: 144)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Lofi Fruits Music - lofi hip hop beats to study, relax & sleep to (ID: 3LFIBdP7eZXJKqf3guepZ1, Tracks: 250)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Relax (ID: 7bU5nu5jT3HmvHFO2lFUHt, Tracks: 123)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Lounge Music | Chill Music (ID: 6sc5PSlwbmOcTyTX4NwE6x, Tracks: 886)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Oldies but goodies - christmas songs (ID: 7BRTjuCHyFLhK1mhGkFxET, Tracks: 113)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: EDM Music 2025 - Top 100 Summer Hits ☀️ (ID: 2e3dcRuo9uDH6qD3NOGKAL, Tracks: 92)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Pool Party Summer 2025🌴 (ID: 2zMZv11a981pTJORORVKbz, Tracks: 119)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Alternative Nation | ALT NATION (ID: 1uBI8icgYcUED3T1W1X6dB, Tracks: 69)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Starred (ID: 4EwlGE7hzMKljJ6G4fYppB, Tracks: 0)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Alternative Chill (ID: 7r4ehid6XqYeHAQnkzHMnw, Tracks: 139)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Classic Rock Music (ID: 4mivC2S1vh2KzcqVi14jAi, Tracks: 176)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Buddah Bar Chill (ID: 5cfDi2XHAfhyyRJ2XCvBHL, Tracks: 108)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Patio Music (ID: 7mnw1KtK9PmtKgqJ56uBV0, Tracks: 320)
+2025-06-15 17:04:58,941 - core - INFO - Found playlist: Wastin' Away Again Tailgate (ID: 6O1EZ48WrQpTCrkKo6yJi7, Tracks: 190)
+2025-06-15 17:04:58,942 - core - INFO - Found playlist: Jack Johnson Style Chill (*) (ID: 5cfg6FM6tmbA6QL33oOL0e, Tracks: 255)
+2025-06-15 17:04:58,942 - core - INFO - Found playlist: Budda Bar Best (ID: 2kALk2JvksCVY1qUUwUYyy, Tracks: 433)
+2025-06-15 17:04:58,942 - core - INFO - Found playlist: Chill Loungy - Cocktail Hour (ID: 2SJKfEMrdgjrykf58S4EAx, Tracks: 57)
+2025-06-15 17:04:58,942 - core - INFO - Found playlist: Chill - Upbeat Lounge  (ID: 0PZaEAT1ydcHWCaHV3zWkB, Tracks: 60)
+2025-06-15 17:04:58,942 - core - INFO - Found playlist: Hit Songs 2025 🎶 Top Hits (ID: 4ANVDtJVtVMVc2Nk79VU1M, Tracks: 101)
+2025-06-15 17:04:58,942 - core - INFO - Reached end of playlist list
+2025-06-15 17:04:58,942 - core - INFO - Successfully fetched 32 playlists
+
+Available playlists:
+1. Half Liked Songs (192 tracks)
+2. Background Chillin’ (13 tracks)
+3. New Orleans Street Jazz (31 tracks)
+4. Whiskey Blues 🥃 Best Of Slow Blues/Rock 🎸 Fantastic Electric Guitar Blues (151 tracks)
+5. Classical chill (2 tracks)
+6. Ultra Music Festival 2025 (173 tracks)
+7. Best of Cristian Marchi (36 tracks)
+8. Forever Midnight NYE 2024 Official Playlist (57 tracks)
+9. EDM Classics (Top 100) (73 tracks)
+10. Mexico Beach Vibes (121 tracks)
+11. K-Chill (5 tracks)
+12. Kid Rock — All Summer Long (1063 tracks)
+13. EDM by DjBone (129 tracks)
+14. House (144 tracks)
+15. Lofi Fruits Music - lofi hip hop beats to study, relax & sleep to (250 tracks)
+16. Relax (123 tracks)
+17. Lounge Music | Chill Music (886 tracks)
+18. Oldies but goodies - christmas songs (113 tracks)
+19. EDM Music 2025 - Top 100 Summer Hits ☀️ (92 tracks)
+20. Pool Party Summer 2025🌴 (119 tracks)
+21. Alternative Nation | ALT NATION (69 tracks)
+22. Starred (0 tracks)
+23. Alternative Chill (139 tracks)
+24. Classic Rock Music (176 tracks)
+25. Buddah Bar Chill (108 tracks)
+26. Patio Music (320 tracks)
+27. Wastin' Away Again Tailgate (190 tracks)
+28. Jack Johnson Style Chill (*) (255 tracks)
+29. Budda Bar Best (433 tracks)
+30. Chill Loungy - Cocktail Hour (57 tracks)
+31. Chill - Upbeat Lounge  (60 tracks)
+32. Hit Songs 2025 🎶 Top Hits (101 tracks)
+
+Analyzing playlist: Half Liked Songs
+2025-06-15 17:04:58,946 - core - INFO - Starting to fetch tracks for playlist 28uaGv7ci5ifpcJwDuEFdN
+2025-06-15 17:04:59,659 - core - INFO - Successfully accessed playlist: Half Liked Songs
+2025-06-15 17:04:59,659 - core - INFO - Fetching tracks batch: offset=0, limit=100
+2025-06-15 17:05:00,739 - core - INFO - Received 100 tracks in this batch
+2025-06-15 17:05:00,739 - core - INFO - Found 145 unique artists in this batch
+2025-06-15 17:05:00,740 - core - INFO - Input artist_ids type: <class 'list'>
+2025-06-15 17:05:00,740 - core - INFO - Input artist_ids length: 145
+2025-06-15 17:05:00,740 - core - INFO - First few input artist_ids: ['6KwxYIbJh4KGDc6dVAF4Tr', '3t8WiyalpvnB9AObcMufiE', '2jw70GZXlAI8QzWeY2bgRc']
+2025-06-15 17:05:00,740 - core - INFO - Batch type before processing: <class 'list'>
+2025-06-15 17:05:00,740 - core - INFO - Batch length before processing: 50
+2025-06-15 17:05:00,937 - core - INFO - Batch type before processing: <class 'list'>
+2025-06-15 17:05:00,938 - core - INFO - Batch length before processing: 50
+2025-06-15 17:05:01,149 - core - INFO - Batch type before processing: <class 'list'>
+2025-06-15 17:05:01,149 - core - INFO - Batch length before processing: 45
+2025-06-15 17:05:01,372 - core - INFO - Fetching tracks batch: offset=100, limit=100
+2025-06-15 17:05:01,961 - core - INFO - Received 92 tracks in this batch
+2025-06-15 17:05:01,962 - core - INFO - Found 139 unique artists in this batch
+2025-06-15 17:05:01,962 - core - INFO - Input artist_ids type: <class 'list'>
+2025-06-15 17:05:01,962 - core - INFO - Input artist_ids length: 139
+2025-06-15 17:05:01,962 - core - INFO - First few input artist_ids: ['1LOB7jTeEV14pHai6EXSzF', '7qmpXeNz2ojlMl2EEfkeLs', '13y7CgLHjMVRMDqxdx0Xdo']
+2025-06-15 17:05:01,962 - core - INFO - Batch type before processing: <class 'list'>
+2025-06-15 17:05:01,962 - core - INFO - Batch length before processing: 50
+2025-06-15 17:05:02,259 - core - INFO - Batch type before processing: <class 'list'>
+2025-06-15 17:05:02,259 - core - INFO - Batch length before processing: 50
+2025-06-15 17:05:02,525 - core - INFO - Batch type before processing: <class 'list'>
+2025-06-15 17:05:02,525 - core - INFO - Batch length before processing: 39
+2025-06-15 17:05:02,789 - core - INFO - Successfully fetched 192 tracks from playlist 28uaGv7ci5ifpcJwDuEFdN
+2025-06-15 17:05:02,791 - __main__ - INFO - Fetching audio features...
+2025-06-15 17:05:02,791 - __main__ - INFO - Track URIs type: <class 'list'>
+2025-06-15 17:05:02,791 - __main__ - INFO - First few track URIs: ['spotify:track:5Z8Dj3LtbyCMiwE86rhg2f', 'spotify:track:4MSj19TwYBLgDFj3ddEeco', 'spotify:track:3nl8PyFVqyi1t0qgvaLKvl']
+2025-06-15 17:05:02,791 - __main__ - INFO - Track URIs length: 192
+2025-06-15 17:05:02,791 - core - INFO - Input track_uris type: <class 'list'>
+2025-06-15 17:05:02,791 - core - INFO - Input track_uris length: 192
+2025-06-15 17:05:02,791 - core - INFO - First few input track_uris: ['spotify:track:5Z8Dj3LtbyCMiwE86rhg2f', 'spotify:track:4MSj19TwYBLgDFj3ddEeco', 'spotify:track:3nl8PyFVqyi1t0qgvaLKvl']
+2025-06-15 17:05:02,791 - core - INFO - Starting to fetch audio features for 192 tracks
+2025-06-15 17:05:02,792 - core - INFO - Fetched access token from Spotipy client: BQB1QM8_cN...
+2025-06-15 17:05:02,792 - core - INFO - Got token: BQB1QM8_cN...
+2025-06-15 17:05:02,792 - core - INFO - Processing batch 1
+2025-06-15 17:05:02,792 - core - INFO - Batch type: <class 'list'>
+2025-06-15 17:05:02,792 - core - INFO - Batch length: 100
+2025-06-15 17:05:02,792 - core - INFO - First few batch items: ['spotify:track:5Z8Dj3LtbyCMiwE86rhg2f', 'spotify:track:4MSj19TwYBLgDFj3ddEeco', 'spotify:track:3nl8PyFVqyi1t0qgvaLKvl']
+2025-06-15 17:05:02,792 - core - INFO - Track IDs type: <class 'list'>
+2025-06-15 17:05:02,792 - core - INFO - Track IDs length: 100
+2025-06-15 17:05:02,792 - core - INFO - First few track IDs: ['5Z8Dj3LtbyCMiwE86rhg2f', '4MSj19TwYBLgDFj3ddEeco', '3nl8PyFVqyi1t0qgvaLKvl']
+2025-06-15 17:05:02,913 - core - INFO - API Response status: 403
+2025-06-15 17:05:02,913 - core - INFO - API Response headers: {'content-type': 'application/json; charset=utf-8', 'cache-control': 'private, max-age=0', 'access-control-allow-origin': '*', 'access-control-allow-headers': 'Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version, X-Cloud-Trace-Context, client-token, content-access-token', 'access-control-allow-methods': 'GET, POST, OPTIONS, PUT, DELETE, PATCH', 'access-control-allow-credentials': 'true', 'access-control-max-age': '604800', 'content-encoding': 'gzip', 'strict-transport-security': 'max-age=31536000', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'date': 'Mon, 16 Jun 2025 00:05:02 GMT', 'server': 'envoy', 'Via': 'HTTP/2 edgeproxy, 1.1 google', 'Transfer-Encoding': 'chunked'}
+2025-06-15 17:05:02,913 - core - ERROR - Error response from Spotify API: {
+  "error" : {
+    "status" : 403
+  }
+}
+2025-06-15 17:05:02,913 - core - INFO - Processing batch 2
+2025-06-15 17:05:02,913 - core - INFO - Batch type: <class 'list'>
+2025-06-15 17:05:02,913 - core - INFO - Batch length: 92
+2025-06-15 17:05:02,913 - core - INFO - First few batch items: ['spotify:track:4uUG5RXrOk84mYEfFvj3cK', 'spotify:track:6DIMM15oo3kxnCuVypaYGy', 'spotify:track:0zvii8YjLEmAhHgkREYYmY']
+2025-06-15 17:05:02,914 - core - INFO - Track IDs type: <class 'list'>
+2025-06-15 17:05:02,914 - core - INFO - Track IDs length: 92
+2025-06-15 17:05:02,914 - core - INFO - First few track IDs: ['4uUG5RXrOk84mYEfFvj3cK', '6DIMM15oo3kxnCuVypaYGy', '0zvii8YjLEmAhHgkREYYmY']
+2025-06-15 17:05:03,043 - core - INFO - API Response status: 403
+2025-06-15 17:05:03,043 - core - INFO - API Response headers: {'content-type': 'application/json; charset=utf-8', 'cache-control': 'private, max-age=0', 'access-control-allow-origin': '*', 'access-control-allow-headers': 'Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version, X-Cloud-Trace-Context, client-token, content-access-token', 'access-control-allow-methods': 'GET, POST, OPTIONS, PUT, DELETE, PATCH', 'access-control-allow-credentials': 'true', 'access-control-max-age': '604800', 'content-encoding': 'gzip', 'strict-transport-security': 'max-age=31536000', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'date': 'Mon, 16 Jun 2025 00:05:02 GMT', 'server': 'envoy', 'Via': 'HTTP/2 edgeproxy, 1.1 google', 'Transfer-Encoding': 'chunked'}
+2025-06-15 17:05:03,043 - core - ERROR - Error response from Spotify API: {
+  "error" : {
+    "status" : 403
+  }
+}
+
+Analysis exported to playlist_analysis_20250615_170503.json
+
+Analysis complete!
+Total tracks: 192
+Playlist: Half Liked Songs
