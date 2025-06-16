@@ -1,51 +1,13 @@
-2025-06-15 17:04:58,553 - core - INFO - Environment Variables Status:
-2025-06-15 17:04:58,553 - core - INFO - SPOTIFY_CLIENT_ID: ✓ Set
-2025-06-15 17:04:58,553 - core - INFO - SPOTIFY_CLIENT_SECRET: ✓ Set
-2025-06-15 17:04:58,553 - core - INFO - REDIRECT_URI: http://127.0.0.1:8888/callback
-2025-06-15 17:04:58,553 - core - INFO - Initializing Spotify client with:
-2025-06-15 17:04:58,553 - core - INFO - Client ID: d48796a6...
-2025-06-15 17:04:58,553 - core - INFO - Redirect URI: http://127.0.0.1:8888/callback
-2025-06-15 17:04:58,553 - core - INFO - Scopes: playlist-read-private, playlist-modify-private, user-library-read, user-library-modify, user-read-private, user-read-email, user-top-read, user-read-recently-played, user-read-currently-playing, user-read-playback-state, user-modify-playback-state, streaming, app-remote-control, user-read-playback-position, user-read-private
-2025-06-15 17:04:58,554 - core - INFO - Successfully initialized Spotify client
-2025-06-15 17:04:58,554 - core - INFO - Starting to fetch user playlists...
-2025-06-15 17:04:58,554 - core - INFO - Using client: <spotipy.client.Spotify object at 0x104f7e120>
-2025-06-15 17:04:58,731 - core - INFO - Successfully authenticated as user: jimleff3311
-2025-06-15 17:04:58,732 - core - INFO - Fetching playlists batch: offset=0, limit=50
-2025-06-15 17:04:58,940 - core - INFO - Received 32 playlists in this batch
-2025-06-15 17:04:58,940 - core - INFO - Found playlist: Half Liked Songs (ID: 28uaGv7ci5ifpcJwDuEFdN, Tracks: 192)
-2025-06-15 17:04:58,940 - core - INFO - Found playlist: Background Chillin’ (ID: 0mp012vffLsDFPd1nKzRIs, Tracks: 13)
-2025-06-15 17:04:58,940 - core - INFO - Found playlist: New Orleans Street Jazz (ID: 64K0hat6AdRxzfdOg90UFC, Tracks: 31)
-2025-06-15 17:04:58,940 - core - INFO - Found playlist: Whiskey Blues 🥃 Best Of Slow Blues/Rock 🎸 Fantastic Electric Guitar Blues (ID: 3ilGPwFb1Qy639q6ufE6Mz, Tracks: 151)
-2025-06-15 17:04:58,940 - core - INFO - Found playlist: Classical chill (ID: 6WRdcYKHlD3xBU4HJhJqc5, Tracks: 2)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Ultra Music Festival 2025 (ID: 1XyyYmwVXc7RJxY679imgE, Tracks: 173)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Best of Cristian Marchi (ID: 1GZ3Cseq9Dg3a4MjVBVM8v, Tracks: 36)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Forever Midnight NYE 2024 Official Playlist (ID: 0f4wLwkGaJmCtuHnY5WgIH, Tracks: 57)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: EDM Classics (Top 100) (ID: 1lS6v9h4MXOw6f6y8MkS8w, Tracks: 73)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Mexico Beach Vibes (ID: 5zzQdotIfFs2xNnGhs6Y9k, Tracks: 121)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: K-Chill (ID: 11FWrs6EzmJEAOnZ3Lmwgt, Tracks: 5)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Kid Rock — All Summer Long (ID: 7Iimyu7LO8zXp64mI2atZJ, Tracks: 1063)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: EDM by DjBone (ID: 1WUj0H8iRm8pF2HbxkX9lx, Tracks: 129)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: House (ID: 5liN3rG97Pj9c1BXemij9j, Tracks: 144)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Lofi Fruits Music - lofi hip hop beats to study, relax & sleep to (ID: 3LFIBdP7eZXJKqf3guepZ1, Tracks: 250)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Relax (ID: 7bU5nu5jT3HmvHFO2lFUHt, Tracks: 123)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Lounge Music | Chill Music (ID: 6sc5PSlwbmOcTyTX4NwE6x, Tracks: 886)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Oldies but goodies - christmas songs (ID: 7BRTjuCHyFLhK1mhGkFxET, Tracks: 113)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: EDM Music 2025 - Top 100 Summer Hits ☀️ (ID: 2e3dcRuo9uDH6qD3NOGKAL, Tracks: 92)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Pool Party Summer 2025🌴 (ID: 2zMZv11a981pTJORORVKbz, Tracks: 119)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Alternative Nation | ALT NATION (ID: 1uBI8icgYcUED3T1W1X6dB, Tracks: 69)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Starred (ID: 4EwlGE7hzMKljJ6G4fYppB, Tracks: 0)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Alternative Chill (ID: 7r4ehid6XqYeHAQnkzHMnw, Tracks: 139)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Classic Rock Music (ID: 4mivC2S1vh2KzcqVi14jAi, Tracks: 176)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Buddah Bar Chill (ID: 5cfDi2XHAfhyyRJ2XCvBHL, Tracks: 108)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Patio Music (ID: 7mnw1KtK9PmtKgqJ56uBV0, Tracks: 320)
-2025-06-15 17:04:58,941 - core - INFO - Found playlist: Wastin' Away Again Tailgate (ID: 6O1EZ48WrQpTCrkKo6yJi7, Tracks: 190)
-2025-06-15 17:04:58,942 - core - INFO - Found playlist: Jack Johnson Style Chill (*) (ID: 5cfg6FM6tmbA6QL33oOL0e, Tracks: 255)
-2025-06-15 17:04:58,942 - core - INFO - Found playlist: Budda Bar Best (ID: 2kALk2JvksCVY1qUUwUYyy, Tracks: 433)
-2025-06-15 17:04:58,942 - core - INFO - Found playlist: Chill Loungy - Cocktail Hour (ID: 2SJKfEMrdgjrykf58S4EAx, Tracks: 57)
-2025-06-15 17:04:58,942 - core - INFO - Found playlist: Chill - Upbeat Lounge  (ID: 0PZaEAT1ydcHWCaHV3zWkB, Tracks: 60)
-2025-06-15 17:04:58,942 - core - INFO - Found playlist: Hit Songs 2025 🎶 Top Hits (ID: 4ANVDtJVtVMVc2Nk79VU1M, Tracks: 101)
-2025-06-15 17:04:58,942 - core - INFO - Reached end of playlist list
-2025-06-15 17:04:58,942 - core - INFO - Successfully fetched 32 playlists
+2025-06-15 17:27:59,770 - core - INFO - Environment Variables Status:
+2025-06-15 17:27:59,770 - core - INFO - SPOTIFY_CLIENT_ID: ✓ Set
+2025-06-15 17:27:59,770 - core - INFO - SPOTIFY_CLIENT_SECRET: ✓ Set
+2025-06-15 17:27:59,770 - core - INFO - REDIRECT_URI: http://127.0.0.1:8888/callback
+2025-06-15 17:27:59,770 - core - INFO - Initializing Spotify client with:
+2025-06-15 17:27:59,770 - core - INFO - Client ID: d48796a6...
+2025-06-15 17:27:59,770 - core - INFO - Redirect URI: http://127.0.0.1:8888/callback
+2025-06-15 17:27:59,770 - core - INFO - Scopes: playlist-read-private, playlist-modify-private, user-library-read, user-library-modify, user-read-private, user-read-email, user-top-read, user-read-recently-played, user-read-currently-playing, user-read-playback-state, user-modify-playback-state, streaming, app-remote-control, user-read-playback-position, user-read-private
+2025-06-15 17:27:59,770 - core - INFO - Successfully initialized Spotify client
+2025-06-15 17:28:00,081 - core - INFO - Fetched 32 playlists at offset 0
 
 Available playlists:
 1. Half Liked Songs (192 tracks)
@@ -81,75 +43,112 @@ Available playlists:
 31. Chill - Upbeat Lounge  (60 tracks)
 32. Hit Songs 2025 🎶 Top Hits (101 tracks)
 
-Analyzing playlist: Half Liked Songs
-2025-06-15 17:04:58,946 - core - INFO - Starting to fetch tracks for playlist 28uaGv7ci5ifpcJwDuEFdN
-2025-06-15 17:04:59,659 - core - INFO - Successfully accessed playlist: Half Liked Songs
-2025-06-15 17:04:59,659 - core - INFO - Fetching tracks batch: offset=0, limit=100
-2025-06-15 17:05:00,739 - core - INFO - Received 100 tracks in this batch
-2025-06-15 17:05:00,739 - core - INFO - Found 145 unique artists in this batch
-2025-06-15 17:05:00,740 - core - INFO - Input artist_ids type: <class 'list'>
-2025-06-15 17:05:00,740 - core - INFO - Input artist_ids length: 145
-2025-06-15 17:05:00,740 - core - INFO - First few input artist_ids: ['6KwxYIbJh4KGDc6dVAF4Tr', '3t8WiyalpvnB9AObcMufiE', '2jw70GZXlAI8QzWeY2bgRc']
-2025-06-15 17:05:00,740 - core - INFO - Batch type before processing: <class 'list'>
-2025-06-15 17:05:00,740 - core - INFO - Batch length before processing: 50
-2025-06-15 17:05:00,937 - core - INFO - Batch type before processing: <class 'list'>
-2025-06-15 17:05:00,938 - core - INFO - Batch length before processing: 50
-2025-06-15 17:05:01,149 - core - INFO - Batch type before processing: <class 'list'>
-2025-06-15 17:05:01,149 - core - INFO - Batch length before processing: 45
-2025-06-15 17:05:01,372 - core - INFO - Fetching tracks batch: offset=100, limit=100
-2025-06-15 17:05:01,961 - core - INFO - Received 92 tracks in this batch
-2025-06-15 17:05:01,962 - core - INFO - Found 139 unique artists in this batch
-2025-06-15 17:05:01,962 - core - INFO - Input artist_ids type: <class 'list'>
-2025-06-15 17:05:01,962 - core - INFO - Input artist_ids length: 139
-2025-06-15 17:05:01,962 - core - INFO - First few input artist_ids: ['1LOB7jTeEV14pHai6EXSzF', '7qmpXeNz2ojlMl2EEfkeLs', '13y7CgLHjMVRMDqxdx0Xdo']
-2025-06-15 17:05:01,962 - core - INFO - Batch type before processing: <class 'list'>
-2025-06-15 17:05:01,962 - core - INFO - Batch length before processing: 50
-2025-06-15 17:05:02,259 - core - INFO - Batch type before processing: <class 'list'>
-2025-06-15 17:05:02,259 - core - INFO - Batch length before processing: 50
-2025-06-15 17:05:02,525 - core - INFO - Batch type before processing: <class 'list'>
-2025-06-15 17:05:02,525 - core - INFO - Batch length before processing: 39
-2025-06-15 17:05:02,789 - core - INFO - Successfully fetched 192 tracks from playlist 28uaGv7ci5ifpcJwDuEFdN
-2025-06-15 17:05:02,791 - __main__ - INFO - Fetching audio features...
-2025-06-15 17:05:02,791 - __main__ - INFO - Track URIs type: <class 'list'>
-2025-06-15 17:05:02,791 - __main__ - INFO - First few track URIs: ['spotify:track:5Z8Dj3LtbyCMiwE86rhg2f', 'spotify:track:4MSj19TwYBLgDFj3ddEeco', 'spotify:track:3nl8PyFVqyi1t0qgvaLKvl']
-2025-06-15 17:05:02,791 - __main__ - INFO - Track URIs length: 192
-2025-06-15 17:05:02,791 - core - INFO - Input track_uris type: <class 'list'>
-2025-06-15 17:05:02,791 - core - INFO - Input track_uris length: 192
-2025-06-15 17:05:02,791 - core - INFO - First few input track_uris: ['spotify:track:5Z8Dj3LtbyCMiwE86rhg2f', 'spotify:track:4MSj19TwYBLgDFj3ddEeco', 'spotify:track:3nl8PyFVqyi1t0qgvaLKvl']
-2025-06-15 17:05:02,791 - core - INFO - Starting to fetch audio features for 192 tracks
-2025-06-15 17:05:02,792 - core - INFO - Fetched access token from Spotipy client: BQB1QM8_cN...
-2025-06-15 17:05:02,792 - core - INFO - Got token: BQB1QM8_cN...
-2025-06-15 17:05:02,792 - core - INFO - Processing batch 1
-2025-06-15 17:05:02,792 - core - INFO - Batch type: <class 'list'>
-2025-06-15 17:05:02,792 - core - INFO - Batch length: 100
-2025-06-15 17:05:02,792 - core - INFO - First few batch items: ['spotify:track:5Z8Dj3LtbyCMiwE86rhg2f', 'spotify:track:4MSj19TwYBLgDFj3ddEeco', 'spotify:track:3nl8PyFVqyi1t0qgvaLKvl']
-2025-06-15 17:05:02,792 - core - INFO - Track IDs type: <class 'list'>
-2025-06-15 17:05:02,792 - core - INFO - Track IDs length: 100
-2025-06-15 17:05:02,792 - core - INFO - First few track IDs: ['5Z8Dj3LtbyCMiwE86rhg2f', '4MSj19TwYBLgDFj3ddEeco', '3nl8PyFVqyi1t0qgvaLKvl']
-2025-06-15 17:05:02,913 - core - INFO - API Response status: 403
-2025-06-15 17:05:02,913 - core - INFO - API Response headers: {'content-type': 'application/json; charset=utf-8', 'cache-control': 'private, max-age=0', 'access-control-allow-origin': '*', 'access-control-allow-headers': 'Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version, X-Cloud-Trace-Context, client-token, content-access-token', 'access-control-allow-methods': 'GET, POST, OPTIONS, PUT, DELETE, PATCH', 'access-control-allow-credentials': 'true', 'access-control-max-age': '604800', 'content-encoding': 'gzip', 'strict-transport-security': 'max-age=31536000', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'date': 'Mon, 16 Jun 2025 00:05:02 GMT', 'server': 'envoy', 'Via': 'HTTP/2 edgeproxy, 1.1 google', 'Transfer-Encoding': 'chunked'}
-2025-06-15 17:05:02,913 - core - ERROR - Error response from Spotify API: {
-  "error" : {
-    "status" : 403
-  }
-}
-2025-06-15 17:05:02,913 - core - INFO - Processing batch 2
-2025-06-15 17:05:02,913 - core - INFO - Batch type: <class 'list'>
-2025-06-15 17:05:02,913 - core - INFO - Batch length: 92
-2025-06-15 17:05:02,913 - core - INFO - First few batch items: ['spotify:track:4uUG5RXrOk84mYEfFvj3cK', 'spotify:track:6DIMM15oo3kxnCuVypaYGy', 'spotify:track:0zvii8YjLEmAhHgkREYYmY']
-2025-06-15 17:05:02,914 - core - INFO - Track IDs type: <class 'list'>
-2025-06-15 17:05:02,914 - core - INFO - Track IDs length: 92
-2025-06-15 17:05:02,914 - core - INFO - First few track IDs: ['4uUG5RXrOk84mYEfFvj3cK', '6DIMM15oo3kxnCuVypaYGy', '0zvii8YjLEmAhHgkREYYmY']
-2025-06-15 17:05:03,043 - core - INFO - API Response status: 403
-2025-06-15 17:05:03,043 - core - INFO - API Response headers: {'content-type': 'application/json; charset=utf-8', 'cache-control': 'private, max-age=0', 'access-control-allow-origin': '*', 'access-control-allow-headers': 'Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version, X-Cloud-Trace-Context, client-token, content-access-token', 'access-control-allow-methods': 'GET, POST, OPTIONS, PUT, DELETE, PATCH', 'access-control-allow-credentials': 'true', 'access-control-max-age': '604800', 'content-encoding': 'gzip', 'strict-transport-security': 'max-age=31536000', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'date': 'Mon, 16 Jun 2025 00:05:02 GMT', 'server': 'envoy', 'Via': 'HTTP/2 edgeproxy, 1.1 google', 'Transfer-Encoding': 'chunked'}
-2025-06-15 17:05:03,043 - core - ERROR - Error response from Spotify API: {
-  "error" : {
-    "status" : 403
-  }
-}
+Selected playlist: Half Liked Songs
+Fetching tracks from playlist: Half Liked Songs
+2025-06-15 17:28:00,851 - core - INFO - Fetched 100 tracks at offset 0
+2025-06-15 17:28:02,193 - core - INFO - Fetched 92 tracks at offset 100
+Successfully fetched 192 tracks
+Starting audio features analysis...
+2025-06-15 17:28:02,194 - core - INFO - Input track_uris type: <class 'list'>
+2025-06-15 17:28:02,194 - core - INFO - Input track_uris length: 192
+2025-06-15 17:28:02,194 - core - INFO - First few track_uris: ['spotify:track:5Z8Dj3LtbyCMiwE86rhg2f', 'spotify:track:4MSj19TwYBLgDFj3ddEeco', 'spotify:track:3nl8PyFVqyi1t0qgvaLKvl']
+2025-06-15 17:28:02,194 - core - INFO - Track IDs type: <class 'list'>
+2025-06-15 17:28:02,194 - core - INFO - Track IDs length: 192
+2025-06-15 17:28:02,194 - core - INFO - First few track IDs: ['5Z8Dj3LtbyCMiwE86rhg2f', '4MSj19TwYBLgDFj3ddEeco', '3nl8PyFVqyi1t0qgvaLKvl']
+2025-06-15 17:28:02,194 - core - INFO - Processing batch 1
+2025-06-15 17:28:02,194 - core - INFO - Batch type: <class 'list'>
+2025-06-15 17:28:02,194 - core - INFO - Batch length: 100
+2025-06-15 17:28:02,194 - core - INFO - First few batch items: ['5Z8Dj3LtbyCMiwE86rhg2f', '4MSj19TwYBLgDFj3ddEeco', '3nl8PyFVqyi1t0qgvaLKvl']
+2025-06-15 17:28:02,280 - spotipy.client - ERROR - HTTP Error for GET to https://api.spotify.com/v1/audio-features/?ids=5Z8Dj3LtbyCMiwE86rhg2f,4MSj19TwYBLgDFj3ddEeco,3nl8PyFVqyi1t0qgvaLKvl,3Zie38oWJgL5mUXivNksxD,2oWpe2L8ypC080BxpDVuTY,4yOiXEQnKDtwRyVLj8j17S,6Q7fxyIXgrbk1bIySqbaij,3HeZam86SuxGp1wZ3XMIjE,7JdiXX87BugXUDhQ89GEc8,67uiBfnqH39zmGWU63NxhS,78vBw8siHaT9TcI5cls1iM,6SqX9J8tXk7rXaspk7GWX1,0zg8u9UUlvwSvBJYEjhgDT,4PkfclOLKVd7QyBJasZkg8,2n6qz4opcJlHsEpI8030YM,74nEGIzIefJhJ5qX7NeIAz,2gGCt2yXxDxDITx19sxwJJ,6sgYrldk8IdtSERq4eGZj1,1bcZHf64xOalMif12Fy7jc,2xmlpRPQUA3lR6HYaeYv7g,14fIlfcmFPlj4V2IazeJ25,3GiORO0zRwRT3g9CCklzkQ,6q36Cqt2d3O5jqrQR9uXCp,3zPco1u9i9bCjkG5pngR5t,52r4FYDc8x1DlWt6x2vuiT,2y2TNx72H4oE01TkztsAR6,2rHUyJioDOKDshDDxzbISl,4HB7ECLzrbgapiZyLlFbxz,2nljjiWhzVIugb5vgEMQQk,62gzfhHi2supfHWfi6iHbA,1BJJbSX6muJVF2AK7uH1x4,1bE98D49uKNetOyLiaB8tG,6bavRPbVF9voNZ4r6hTgVO,5Z3trOR982mBrJcPfrLUsq,5QoLl71CrQlFgm11D39aX4,4SDiSxAr5DJjcoXJhfirLM,3kZqrLzuoE54EfHPwappr6,6ZDsuSBfVVSJQaXM6E8AZz,10xTooKnfBqdEMSMNIt7oj,7qTu1G3gDgC5qJ6Eu71OUs,0R4C2kpA9IPKUQXFpRUuLm,7jURkEKDVEm9sHueqUX0ko,4TwEdnSiTPDR1vg1QZ5K8W,3BntzKsnLf2pc0dsvE3Zav,4aSyYc1rWc2KhTknSfpx9H,1Q7OXxsTM8aUaZ3BbPfIDb,1Gsjc9rK2vAFjDu2Umlbbd,0xoYZ45fgTfyQYREZPN7Sa,5MhsZlmKJG6X5kTHkdwC4B,5TX4QkyawyBAjNjwF2qBzG,02QE4LsAj7DBjMRxolGE8a,1Gz2E1chOzRyhFXHJYWw8y,436Tn5GopmkEQ3zDMlTRme,3Fzlg5r1IjhLk2qRw667od,6ho0GyrWZN3mhi9zVRW7xi,1w3IvRZpHTCyGkCp8icGAa,1q3qh7hEJrPmPH7uOteYSr,32VIrOsJmwvqRm4rWFBCsi,787Y2idwCU2Rk60Prv4wpr,63HwAAXuSV2tzIUPoHOwZa,6t4VHEcJ7Kek9pgGHlDp6R,2FEUloDXMvRnyfLcsrCfkw,6VD3T09spn64tjPcBih64P,2bI6KAUqXeIXGAEEvup8ri,1KwEPtcGABeWiVqetHLDgH,2z9iuAxKv4TTeCrPAxxKg9,7xFy1kfgGWJWTpx1vSHBLi,7FAFkQQZFeNwOFzTrSDFIh,56oGoEjA9eTZYgsttEFKY3,0GYx8Q9iS05CRe9kyzwAIL,3TjE3A8tLih7KBwKJ03Htl,0WE8YTl6GAVHnkfvMfci98,5Ohh8csVsOnG7CnDrd2E5W,6QTPacyXkZWG9FMwq6L1hJ,4Rr3KusbmXZQMGaoeQ5NSe,5cdauxzCnViQEruce9myFV,5C8ySsx3AT121g24uYR823,21DuXS5wpeO1z0dp445bop,5rX6C5QVvvZB7XckETNych,09CnYHiZ5jGT1wr1TXJ9Zt,4ASOMWcJUrwEpjJy4GEijz,6Ea2oEzysv4UECGNxL1IEW,4g6m1iaAsgdgDqgxGtvY0C,6ouTGbETM7ZdID1eMXZJde,4N5s8lPTsjI9EGP7K4SXzB,1kOg8OXkYhsoaCuDppNyxF,0agQ9vIV7NP4dntGKLcCXO,1MVqeIAwhD4T44AKVkIfic,5vFJOD9V4rHgTLWaBRGQ4N,331l3xABO0HMr1Kkyh2LZq,3AjSfp5FDvwtMU9XBsbS8j,0h3Xy4V4apMraB5NuM8U7Z,6UbM3KyXtvfZr06ixZhea1,0LMwmV37RCmBO2so0szAFs,4E2rXUbcF1zhZVzNzeVPGV,1M8U7UHu9rhwumTu8IrqeD,4OMJGnvZfDvsePyCwRGO7X,043trFU53vB0CBmFszufZd,7GF1fEMvKVtKQkRa6Sqh6S,4W8uqSbhmHgVoTJz6CsBEB with Params: {} returned 403 due to None
+2025-06-15 17:28:02,281 - core - ERROR - Error fetching audio features for batch: http status: 403, code: -1 - https://api.spotify.com/v1/audio-features/?ids=5Z8Dj3LtbyCMiwE86rhg2f,4MSj19TwYBLgDFj3ddEeco,3nl8PyFVqyi1t0qgvaLKvl,3Zie38oWJgL5mUXivNksxD,2oWpe2L8ypC080BxpDVuTY,4yOiXEQnKDtwRyVLj8j17S,6Q7fxyIXgrbk1bIySqbaij,3HeZam86SuxGp1wZ3XMIjE,7JdiXX87BugXUDhQ89GEc8,67uiBfnqH39zmGWU63NxhS,78vBw8siHaT9TcI5cls1iM,6SqX9J8tXk7rXaspk7GWX1,0zg8u9UUlvwSvBJYEjhgDT,4PkfclOLKVd7QyBJasZkg8,2n6qz4opcJlHsEpI8030YM,74nEGIzIefJhJ5qX7NeIAz,2gGCt2yXxDxDITx19sxwJJ,6sgYrldk8IdtSERq4eGZj1,1bcZHf64xOalMif12Fy7jc,2xmlpRPQUA3lR6HYaeYv7g,14fIlfcmFPlj4V2IazeJ25,3GiORO0zRwRT3g9CCklzkQ,6q36Cqt2d3O5jqrQR9uXCp,3zPco1u9i9bCjkG5pngR5t,52r4FYDc8x1DlWt6x2vuiT,2y2TNx72H4oE01TkztsAR6,2rHUyJioDOKDshDDxzbISl,4HB7ECLzrbgapiZyLlFbxz,2nljjiWhzVIugb5vgEMQQk,62gzfhHi2supfHWfi6iHbA,1BJJbSX6muJVF2AK7uH1x4,1bE98D49uKNetOyLiaB8tG,6bavRPbVF9voNZ4r6hTgVO,5Z3trOR982mBrJcPfrLUsq,5QoLl71CrQlFgm11D39aX4,4SDiSxAr5DJjcoXJhfirLM,3kZqrLzuoE54EfHPwappr6,6ZDsuSBfVVSJQaXM6E8AZz,10xTooKnfBqdEMSMNIt7oj,7qTu1G3gDgC5qJ6Eu71OUs,0R4C2kpA9IPKUQXFpRUuLm,7jURkEKDVEm9sHueqUX0ko,4TwEdnSiTPDR1vg1QZ5K8W,3BntzKsnLf2pc0dsvE3Zav,4aSyYc1rWc2KhTknSfpx9H,1Q7OXxsTM8aUaZ3BbPfIDb,1Gsjc9rK2vAFjDu2Umlbbd,0xoYZ45fgTfyQYREZPN7Sa,5MhsZlmKJG6X5kTHkdwC4B,5TX4QkyawyBAjNjwF2qBzG,02QE4LsAj7DBjMRxolGE8a,1Gz2E1chOzRyhFXHJYWw8y,436Tn5GopmkEQ3zDMlTRme,3Fzlg5r1IjhLk2qRw667od,6ho0GyrWZN3mhi9zVRW7xi,1w3IvRZpHTCyGkCp8icGAa,1q3qh7hEJrPmPH7uOteYSr,32VIrOsJmwvqRm4rWFBCsi,787Y2idwCU2Rk60Prv4wpr,63HwAAXuSV2tzIUPoHOwZa,6t4VHEcJ7Kek9pgGHlDp6R,2FEUloDXMvRnyfLcsrCfkw,6VD3T09spn64tjPcBih64P,2bI6KAUqXeIXGAEEvup8ri,1KwEPtcGABeWiVqetHLDgH,2z9iuAxKv4TTeCrPAxxKg9,7xFy1kfgGWJWTpx1vSHBLi,7FAFkQQZFeNwOFzTrSDFIh,56oGoEjA9eTZYgsttEFKY3,0GYx8Q9iS05CRe9kyzwAIL,3TjE3A8tLih7KBwKJ03Htl,0WE8YTl6GAVHnkfvMfci98,5Ohh8csVsOnG7CnDrd2E5W,6QTPacyXkZWG9FMwq6L1hJ,4Rr3KusbmXZQMGaoeQ5NSe,5cdauxzCnViQEruce9myFV,5C8ySsx3AT121g24uYR823,21DuXS5wpeO1z0dp445bop,5rX6C5QVvvZB7XckETNych,09CnYHiZ5jGT1wr1TXJ9Zt,4ASOMWcJUrwEpjJy4GEijz,6Ea2oEzysv4UECGNxL1IEW,4g6m1iaAsgdgDqgxGtvY0C,6ouTGbETM7ZdID1eMXZJde,4N5s8lPTsjI9EGP7K4SXzB,1kOg8OXkYhsoaCuDppNyxF,0agQ9vIV7NP4dntGKLcCXO,1MVqeIAwhD4T44AKVkIfic,5vFJOD9V4rHgTLWaBRGQ4N,331l3xABO0HMr1Kkyh2LZq,3AjSfp5FDvwtMU9XBsbS8j,0h3Xy4V4apMraB5NuM8U7Z,6UbM3KyXtvfZr06ixZhea1,0LMwmV37RCmBO2so0szAFs,4E2rXUbcF1zhZVzNzeVPGV,1M8U7UHu9rhwumTu8IrqeD,4OMJGnvZfDvsePyCwRGO7X,043trFU53vB0CBmFszufZd,7GF1fEMvKVtKQkRa6Sqh6S,4W8uqSbhmHgVoTJz6CsBEB:
+ None, reason: None
+2025-06-15 17:28:02,281 - core - ERROR - Error type: <class 'spotipy.exceptions.SpotifyException'>
+2025-06-15 17:28:02,281 - core - ERROR - Error args: (403, -1, 'https://api.spotify.com/v1/audio-features/?ids=5Z8Dj3LtbyCMiwE86rhg2f,4MSj19TwYBLgDFj3ddEeco,3nl8PyFVqyi1t0qgvaLKvl,3Zie38oWJgL5mUXivNksxD,2oWpe2L8ypC080BxpDVuTY,4yOiXEQnKDtwRyVLj8j17S,6Q7fxyIXgrbk1bIySqbaij,3HeZam86SuxGp1wZ3XMIjE,7JdiXX87BugXUDhQ89GEc8,67uiBfnqH39zmGWU63NxhS,78vBw8siHaT9TcI5cls1iM,6SqX9J8tXk7rXaspk7GWX1,0zg8u9UUlvwSvBJYEjhgDT,4PkfclOLKVd7QyBJasZkg8,2n6qz4opcJlHsEpI8030YM,74nEGIzIefJhJ5qX7NeIAz,2gGCt2yXxDxDITx19sxwJJ,6sgYrldk8IdtSERq4eGZj1,1bcZHf64xOalMif12Fy7jc,2xmlpRPQUA3lR6HYaeYv7g,14fIlfcmFPlj4V2IazeJ25,3GiORO0zRwRT3g9CCklzkQ,6q36Cqt2d3O5jqrQR9uXCp,3zPco1u9i9bCjkG5pngR5t,52r4FYDc8x1DlWt6x2vuiT,2y2TNx72H4oE01TkztsAR6,2rHUyJioDOKDshDDxzbISl,4HB7ECLzrbgapiZyLlFbxz,2nljjiWhzVIugb5vgEMQQk,62gzfhHi2supfHWfi6iHbA,1BJJbSX6muJVF2AK7uH1x4,1bE98D49uKNetOyLiaB8tG,6bavRPbVF9voNZ4r6hTgVO,5Z3trOR982mBrJcPfrLUsq,5QoLl71CrQlFgm11D39aX4,4SDiSxAr5DJjcoXJhfirLM,3kZqrLzuoE54EfHPwappr6,6ZDsuSBfVVSJQaXM6E8AZz,10xTooKnfBqdEMSMNIt7oj,7qTu1G3gDgC5qJ6Eu71OUs,0R4C2kpA9IPKUQXFpRUuLm,7jURkEKDVEm9sHueqUX0ko,4TwEdnSiTPDR1vg1QZ5K8W,3BntzKsnLf2pc0dsvE3Zav,4aSyYc1rWc2KhTknSfpx9H,1Q7OXxsTM8aUaZ3BbPfIDb,1Gsjc9rK2vAFjDu2Umlbbd,0xoYZ45fgTfyQYREZPN7Sa,5MhsZlmKJG6X5kTHkdwC4B,5TX4QkyawyBAjNjwF2qBzG,02QE4LsAj7DBjMRxolGE8a,1Gz2E1chOzRyhFXHJYWw8y,436Tn5GopmkEQ3zDMlTRme,3Fzlg5r1IjhLk2qRw667od,6ho0GyrWZN3mhi9zVRW7xi,1w3IvRZpHTCyGkCp8icGAa,1q3qh7hEJrPmPH7uOteYSr,32VIrOsJmwvqRm4rWFBCsi,787Y2idwCU2Rk60Prv4wpr,63HwAAXuSV2tzIUPoHOwZa,6t4VHEcJ7Kek9pgGHlDp6R,2FEUloDXMvRnyfLcsrCfkw,6VD3T09spn64tjPcBih64P,2bI6KAUqXeIXGAEEvup8ri,1KwEPtcGABeWiVqetHLDgH,2z9iuAxKv4TTeCrPAxxKg9,7xFy1kfgGWJWTpx1vSHBLi,7FAFkQQZFeNwOFzTrSDFIh,56oGoEjA9eTZYgsttEFKY3,0GYx8Q9iS05CRe9kyzwAIL,3TjE3A8tLih7KBwKJ03Htl,0WE8YTl6GAVHnkfvMfci98,5Ohh8csVsOnG7CnDrd2E5W,6QTPacyXkZWG9FMwq6L1hJ,4Rr3KusbmXZQMGaoeQ5NSe,5cdauxzCnViQEruce9myFV,5C8ySsx3AT121g24uYR823,21DuXS5wpeO1z0dp445bop,5rX6C5QVvvZB7XckETNych,09CnYHiZ5jGT1wr1TXJ9Zt,4ASOMWcJUrwEpjJy4GEijz,6Ea2oEzysv4UECGNxL1IEW,4g6m1iaAsgdgDqgxGtvY0C,6ouTGbETM7ZdID1eMXZJde,4N5s8lPTsjI9EGP7K4SXzB,1kOg8OXkYhsoaCuDppNyxF,0agQ9vIV7NP4dntGKLcCXO,1MVqeIAwhD4T44AKVkIfic,5vFJOD9V4rHgTLWaBRGQ4N,331l3xABO0HMr1Kkyh2LZq,3AjSfp5FDvwtMU9XBsbS8j,0h3Xy4V4apMraB5NuM8U7Z,6UbM3KyXtvfZr06ixZhea1,0LMwmV37RCmBO2so0szAFs,4E2rXUbcF1zhZVzNzeVPGV,1M8U7UHu9rhwumTu8IrqeD,4OMJGnvZfDvsePyCwRGO7X,043trFU53vB0CBmFszufZd,7GF1fEMvKVtKQkRa6Sqh6S,4W8uqSbhmHgVoTJz6CsBEB:\n None')
+2025-06-15 17:28:02,286 - core - ERROR - Traceback: Traceback (most recent call last):
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/spotipy/client.py", line 274, in _internal_call
+    response.raise_for_status()
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.spotify.com/v1/audio-features/?ids=5Z8Dj3LtbyCMiwE86rhg2f,4MSj19TwYBLgDFj3ddEeco,3nl8PyFVqyi1t0qgvaLKvl,3Zie38oWJgL5mUXivNksxD,2oWpe2L8ypC080BxpDVuTY,4yOiXEQnKDtwRyVLj8j17S,6Q7fxyIXgrbk1bIySqbaij,3HeZam86SuxGp1wZ3XMIjE,7JdiXX87BugXUDhQ89GEc8,67uiBfnqH39zmGWU63NxhS,78vBw8siHaT9TcI5cls1iM,6SqX9J8tXk7rXaspk7GWX1,0zg8u9UUlvwSvBJYEjhgDT,4PkfclOLKVd7QyBJasZkg8,2n6qz4opcJlHsEpI8030YM,74nEGIzIefJhJ5qX7NeIAz,2gGCt2yXxDxDITx19sxwJJ,6sgYrldk8IdtSERq4eGZj1,1bcZHf64xOalMif12Fy7jc,2xmlpRPQUA3lR6HYaeYv7g,14fIlfcmFPlj4V2IazeJ25,3GiORO0zRwRT3g9CCklzkQ,6q36Cqt2d3O5jqrQR9uXCp,3zPco1u9i9bCjkG5pngR5t,52r4FYDc8x1DlWt6x2vuiT,2y2TNx72H4oE01TkztsAR6,2rHUyJioDOKDshDDxzbISl,4HB7ECLzrbgapiZyLlFbxz,2nljjiWhzVIugb5vgEMQQk,62gzfhHi2supfHWfi6iHbA,1BJJbSX6muJVF2AK7uH1x4,1bE98D49uKNetOyLiaB8tG,6bavRPbVF9voNZ4r6hTgVO,5Z3trOR982mBrJcPfrLUsq,5QoLl71CrQlFgm11D39aX4,4SDiSxAr5DJjcoXJhfirLM,3kZqrLzuoE54EfHPwappr6,6ZDsuSBfVVSJQaXM6E8AZz,10xTooKnfBqdEMSMNIt7oj,7qTu1G3gDgC5qJ6Eu71OUs,0R4C2kpA9IPKUQXFpRUuLm,7jURkEKDVEm9sHueqUX0ko,4TwEdnSiTPDR1vg1QZ5K8W,3BntzKsnLf2pc0dsvE3Zav,4aSyYc1rWc2KhTknSfpx9H,1Q7OXxsTM8aUaZ3BbPfIDb,1Gsjc9rK2vAFjDu2Umlbbd,0xoYZ45fgTfyQYREZPN7Sa,5MhsZlmKJG6X5kTHkdwC4B,5TX4QkyawyBAjNjwF2qBzG,02QE4LsAj7DBjMRxolGE8a,1Gz2E1chOzRyhFXHJYWw8y,436Tn5GopmkEQ3zDMlTRme,3Fzlg5r1IjhLk2qRw667od,6ho0GyrWZN3mhi9zVRW7xi,1w3IvRZpHTCyGkCp8icGAa,1q3qh7hEJrPmPH7uOteYSr,32VIrOsJmwvqRm4rWFBCsi,787Y2idwCU2Rk60Prv4wpr,63HwAAXuSV2tzIUPoHOwZa,6t4VHEcJ7Kek9pgGHlDp6R,2FEUloDXMvRnyfLcsrCfkw,6VD3T09spn64tjPcBih64P,2bI6KAUqXeIXGAEEvup8ri,1KwEPtcGABeWiVqetHLDgH,2z9iuAxKv4TTeCrPAxxKg9,7xFy1kfgGWJWTpx1vSHBLi,7FAFkQQZFeNwOFzTrSDFIh,56oGoEjA9eTZYgsttEFKY3,0GYx8Q9iS05CRe9kyzwAIL,3TjE3A8tLih7KBwKJ03Htl,0WE8YTl6GAVHnkfvMfci98,5Ohh8csVsOnG7CnDrd2E5W,6QTPacyXkZWG9FMwq6L1hJ,4Rr3KusbmXZQMGaoeQ5NSe,5cdauxzCnViQEruce9myFV,5C8ySsx3AT121g24uYR823,21DuXS5wpeO1z0dp445bop,5rX6C5QVvvZB7XckETNych,09CnYHiZ5jGT1wr1TXJ9Zt,4ASOMWcJUrwEpjJy4GEijz,6Ea2oEzysv4UECGNxL1IEW,4g6m1iaAsgdgDqgxGtvY0C,6ouTGbETM7ZdID1eMXZJde,4N5s8lPTsjI9EGP7K4SXzB,1kOg8OXkYhsoaCuDppNyxF,0agQ9vIV7NP4dntGKLcCXO,1MVqeIAwhD4T44AKVkIfic,5vFJOD9V4rHgTLWaBRGQ4N,331l3xABO0HMr1Kkyh2LZq,3AjSfp5FDvwtMU9XBsbS8j,0h3Xy4V4apMraB5NuM8U7Z,6UbM3KyXtvfZr06ixZhea1,0LMwmV37RCmBO2so0szAFs,4E2rXUbcF1zhZVzNzeVPGV,1M8U7UHu9rhwumTu8IrqeD,4OMJGnvZfDvsePyCwRGO7X,043trFU53vB0CBmFszufZd,7GF1fEMvKVtKQkRa6Sqh6S,4W8uqSbhmHgVoTJz6CsBEB
 
-Analysis exported to playlist_analysis_20250615_170503.json
+During handling of the above exception, another exception occurred:
 
-Analysis complete!
-Total tracks: 192
-Playlist: Half Liked Songs
+Traceback (most recent call last):
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/core.py", line 237, in fetch_audio_features
+    results = client.audio_features(batch)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/spotipy/client.py", line 1802, in audio_features
+    results = self._get("audio-features/?ids=" + ",".join(tlist))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/spotipy/client.py", line 324, in _get
+    return self._internal_call("GET", url, payload, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/spotipy/client.py", line 294, in _internal_call
+    raise SpotifyException(
+spotipy.exceptions.SpotifyException: http status: 403, code: -1 - https://api.spotify.com/v1/audio-features/?ids=5Z8Dj3LtbyCMiwE86rhg2f,4MSj19TwYBLgDFj3ddEeco,3nl8PyFVqyi1t0qgvaLKvl,3Zie38oWJgL5mUXivNksxD,2oWpe2L8ypC080BxpDVuTY,4yOiXEQnKDtwRyVLj8j17S,6Q7fxyIXgrbk1bIySqbaij,3HeZam86SuxGp1wZ3XMIjE,7JdiXX87BugXUDhQ89GEc8,67uiBfnqH39zmGWU63NxhS,78vBw8siHaT9TcI5cls1iM,6SqX9J8tXk7rXaspk7GWX1,0zg8u9UUlvwSvBJYEjhgDT,4PkfclOLKVd7QyBJasZkg8,2n6qz4opcJlHsEpI8030YM,74nEGIzIefJhJ5qX7NeIAz,2gGCt2yXxDxDITx19sxwJJ,6sgYrldk8IdtSERq4eGZj1,1bcZHf64xOalMif12Fy7jc,2xmlpRPQUA3lR6HYaeYv7g,14fIlfcmFPlj4V2IazeJ25,3GiORO0zRwRT3g9CCklzkQ,6q36Cqt2d3O5jqrQR9uXCp,3zPco1u9i9bCjkG5pngR5t,52r4FYDc8x1DlWt6x2vuiT,2y2TNx72H4oE01TkztsAR6,2rHUyJioDOKDshDDxzbISl,4HB7ECLzrbgapiZyLlFbxz,2nljjiWhzVIugb5vgEMQQk,62gzfhHi2supfHWfi6iHbA,1BJJbSX6muJVF2AK7uH1x4,1bE98D49uKNetOyLiaB8tG,6bavRPbVF9voNZ4r6hTgVO,5Z3trOR982mBrJcPfrLUsq,5QoLl71CrQlFgm11D39aX4,4SDiSxAr5DJjcoXJhfirLM,3kZqrLzuoE54EfHPwappr6,6ZDsuSBfVVSJQaXM6E8AZz,10xTooKnfBqdEMSMNIt7oj,7qTu1G3gDgC5qJ6Eu71OUs,0R4C2kpA9IPKUQXFpRUuLm,7jURkEKDVEm9sHueqUX0ko,4TwEdnSiTPDR1vg1QZ5K8W,3BntzKsnLf2pc0dsvE3Zav,4aSyYc1rWc2KhTknSfpx9H,1Q7OXxsTM8aUaZ3BbPfIDb,1Gsjc9rK2vAFjDu2Umlbbd,0xoYZ45fgTfyQYREZPN7Sa,5MhsZlmKJG6X5kTHkdwC4B,5TX4QkyawyBAjNjwF2qBzG,02QE4LsAj7DBjMRxolGE8a,1Gz2E1chOzRyhFXHJYWw8y,436Tn5GopmkEQ3zDMlTRme,3Fzlg5r1IjhLk2qRw667od,6ho0GyrWZN3mhi9zVRW7xi,1w3IvRZpHTCyGkCp8icGAa,1q3qh7hEJrPmPH7uOteYSr,32VIrOsJmwvqRm4rWFBCsi,787Y2idwCU2Rk60Prv4wpr,63HwAAXuSV2tzIUPoHOwZa,6t4VHEcJ7Kek9pgGHlDp6R,2FEUloDXMvRnyfLcsrCfkw,6VD3T09spn64tjPcBih64P,2bI6KAUqXeIXGAEEvup8ri,1KwEPtcGABeWiVqetHLDgH,2z9iuAxKv4TTeCrPAxxKg9,7xFy1kfgGWJWTpx1vSHBLi,7FAFkQQZFeNwOFzTrSDFIh,56oGoEjA9eTZYgsttEFKY3,0GYx8Q9iS05CRe9kyzwAIL,3TjE3A8tLih7KBwKJ03Htl,0WE8YTl6GAVHnkfvMfci98,5Ohh8csVsOnG7CnDrd2E5W,6QTPacyXkZWG9FMwq6L1hJ,4Rr3KusbmXZQMGaoeQ5NSe,5cdauxzCnViQEruce9myFV,5C8ySsx3AT121g24uYR823,21DuXS5wpeO1z0dp445bop,5rX6C5QVvvZB7XckETNych,09CnYHiZ5jGT1wr1TXJ9Zt,4ASOMWcJUrwEpjJy4GEijz,6Ea2oEzysv4UECGNxL1IEW,4g6m1iaAsgdgDqgxGtvY0C,6ouTGbETM7ZdID1eMXZJde,4N5s8lPTsjI9EGP7K4SXzB,1kOg8OXkYhsoaCuDppNyxF,0agQ9vIV7NP4dntGKLcCXO,1MVqeIAwhD4T44AKVkIfic,5vFJOD9V4rHgTLWaBRGQ4N,331l3xABO0HMr1Kkyh2LZq,3AjSfp5FDvwtMU9XBsbS8j,0h3Xy4V4apMraB5NuM8U7Z,6UbM3KyXtvfZr06ixZhea1,0LMwmV37RCmBO2so0szAFs,4E2rXUbcF1zhZVzNzeVPGV,1M8U7UHu9rhwumTu8IrqeD,4OMJGnvZfDvsePyCwRGO7X,043trFU53vB0CBmFszufZd,7GF1fEMvKVtKQkRa6Sqh6S,4W8uqSbhmHgVoTJz6CsBEB:
+ None, reason: None
+
+2025-06-15 17:28:02,287 - core - INFO - Processing batch 2
+2025-06-15 17:28:02,287 - core - INFO - Batch type: <class 'list'>
+2025-06-15 17:28:02,287 - core - INFO - Batch length: 92
+2025-06-15 17:28:02,287 - core - INFO - First few batch items: ['4uUG5RXrOk84mYEfFvj3cK', '6DIMM15oo3kxnCuVypaYGy', '0zvii8YjLEmAhHgkREYYmY']
+2025-06-15 17:28:02,373 - spotipy.client - ERROR - HTTP Error for GET to https://api.spotify.com/v1/audio-features/?ids=4uUG5RXrOk84mYEfFvj3cK,6DIMM15oo3kxnCuVypaYGy,0zvii8YjLEmAhHgkREYYmY,0lXjag7QhbY2UQdbKKLpQR,2Qgb6Wtgj5xihMykVII4qb,7HH2qGXywdgAn5b2WHnkQq,2dwW50DVv7TJm68OnjxK1Z,0uF0cDtz7klwRO8MXQ6PSU,3IhM5Mber8KA0NaRNpK2px,4S2qrsdY4BF0T5UFQLtqoU,62OQBLpD3TmkqbtTPqqdRt,0OpcI3rARLsNWgVbPdwHD9,3YVeaqhSFth8QAL45wO19L,4XZIuf6EJw8HKOkRC9Jlj4,3ruSBJtsa5dVwbIl7miXBw,10bd6R7QRiOJCjlCvYGpOw,7CNRVEMSXo0fRJwZyM0L2n,1kmQ47Sk87vxAN7TAiBpaX,6UqRGwjwYL0stXbaodTxwo,7K1TsEgLCoNxr7tvPRJgrL,53ICqRSyTfhrrvNwVSP6am,1A8j067qyiNwQnZT0bzUpZ,6eoY6XnhGFr3HInyECJdbx,79SrdoXn93tgSzksq73X2y,5KxfS8v2vdBgq4TCdtoFWj,33o5QF5ZEAllqV4jDnRYu7,00Nsyeo2kcU4602zMsLWXW,5JPotSaks8ig6cFcSoFzLj,05GvwwTLLID738BbKN1ze0,2d3QlXE6FXFDeodiS66yjM,5PkiQaTxnzdBC5XLjc0WJR,5lM7WOaPyCHi1S0FBrqQ6k,6PuoZT4kgw5DrUEdnQ6e01,4tO2Ol08xzay6zcfhDKpuN,4GZ3YCkuH0VvTluVLwUp4g,1zZBzlQHazjd1C7PM2apDE,2XYUIu1N5iUQw4p0lzpM0E,25Kyv5SeEenT0EETpP2hYn,6CgnHnR0C1qsAiq4UAVO8B,1dt220OBbkTsYz1NLVKIaw,033vo5SJAaHl29XHn9mel8,4xbXuRfZ2ZLktw5QEdGYnX,1h2igaPPB08Gwe4WZynsei,4bOVDHj19JdKriaDQu41wD,27rdGxbavYJeBphck5MZAF,3KruoUtSkm84Az0bJunnxl,7MIhUdNJtaOnDmC5nBC1fb,16vUeW77F6Xiz1irHBvTAM,6iC7vapdKp0XlKhxOkp8QJ,79wDq3jpGu0yew1ngQpAAi,4vIsQb5PihLxxKzCeyXOg3,39cmB3ZoTOLwOTq7tMNqKa,1p0jBDjxORjYNJyAphBRpE,7CEV9VwA8XO9wwxTXgYKvY,2wi4d9kls0CWgE4RsghZyR,0PHWXLXOQXGlyUGq7woVFZ,5NOh0KTu5VNFUyRRaOjfDH,7mE57yFVWevAttx4HvLZKi,4SBqydJCEhcroni09XgT2c,4ADsYu1V5CpFLXNve7iK4Z,6IVsYkP3RWt3AwMeHOgDFF,30rbgel2Cop5Ayf61g4KnK,2YUVIkvZ2tPEZYTepX6oT9,2yEHX6MqAXPyD7bm47A2Br,1rGd2CoMxEg2dnaytLY5ZG,0tI7SJjaezftm7xOaaIG2u,48Jf12YHPBCAfAzi255Rvr,4rXfbIpiDnGxZYIflm8LSQ,0RgUxB0pyyzPm5apCmBnHZ,0E9ZjEAyAwOXZ7wJC0PD33,3kcKlOkQQEPVwxwljbGJ5p,6BePGk3eCan4FqaW2X8Qy3,6qItx3M2IZbXBKRnptbnHM,6Dy1jexKYriXAVG6evyUTJ,2gZwBmkSmsVfEPFWGuWTDk,2ayyzfxamdoNRDI0au3wva,2FSvmq9jktuOnl6H45zEaD,5iqrbO0fhuLMiy9tYGanv6,5rW7qTn83sCKtqBoneJs63,6YtUe8dzZ357QD4t56nG00,7nwEab6Y4LXbKUZDNofOag,5B9HpTPTixssrDSFYE35l7,3Dr0xDJwXy6JkiHNJfv5zd,5b97lA5UaQeoj9Pj585Ouo,46bBDuhHpAAoIpGbW4Z3O4,748mdHapucXQri7IAO8yFK,44JSreJxvgl3CxLo5MoQL0,4ufkuONjQMNR2fyXu1bO9w,3wYOGJYD31sLRmBgCvWxa4,7jvCeWOSnJs2N3spqobWnO,1GkHyypTFkUf0QQKwYoXH4,1sx0XsWUusUoPstbvokZjP with Params: {} returned 403 due to None
+2025-06-15 17:28:02,373 - core - ERROR - Error fetching audio features for batch: http status: 403, code: -1 - https://api.spotify.com/v1/audio-features/?ids=4uUG5RXrOk84mYEfFvj3cK,6DIMM15oo3kxnCuVypaYGy,0zvii8YjLEmAhHgkREYYmY,0lXjag7QhbY2UQdbKKLpQR,2Qgb6Wtgj5xihMykVII4qb,7HH2qGXywdgAn5b2WHnkQq,2dwW50DVv7TJm68OnjxK1Z,0uF0cDtz7klwRO8MXQ6PSU,3IhM5Mber8KA0NaRNpK2px,4S2qrsdY4BF0T5UFQLtqoU,62OQBLpD3TmkqbtTPqqdRt,0OpcI3rARLsNWgVbPdwHD9,3YVeaqhSFth8QAL45wO19L,4XZIuf6EJw8HKOkRC9Jlj4,3ruSBJtsa5dVwbIl7miXBw,10bd6R7QRiOJCjlCvYGpOw,7CNRVEMSXo0fRJwZyM0L2n,1kmQ47Sk87vxAN7TAiBpaX,6UqRGwjwYL0stXbaodTxwo,7K1TsEgLCoNxr7tvPRJgrL,53ICqRSyTfhrrvNwVSP6am,1A8j067qyiNwQnZT0bzUpZ,6eoY6XnhGFr3HInyECJdbx,79SrdoXn93tgSzksq73X2y,5KxfS8v2vdBgq4TCdtoFWj,33o5QF5ZEAllqV4jDnRYu7,00Nsyeo2kcU4602zMsLWXW,5JPotSaks8ig6cFcSoFzLj,05GvwwTLLID738BbKN1ze0,2d3QlXE6FXFDeodiS66yjM,5PkiQaTxnzdBC5XLjc0WJR,5lM7WOaPyCHi1S0FBrqQ6k,6PuoZT4kgw5DrUEdnQ6e01,4tO2Ol08xzay6zcfhDKpuN,4GZ3YCkuH0VvTluVLwUp4g,1zZBzlQHazjd1C7PM2apDE,2XYUIu1N5iUQw4p0lzpM0E,25Kyv5SeEenT0EETpP2hYn,6CgnHnR0C1qsAiq4UAVO8B,1dt220OBbkTsYz1NLVKIaw,033vo5SJAaHl29XHn9mel8,4xbXuRfZ2ZLktw5QEdGYnX,1h2igaPPB08Gwe4WZynsei,4bOVDHj19JdKriaDQu41wD,27rdGxbavYJeBphck5MZAF,3KruoUtSkm84Az0bJunnxl,7MIhUdNJtaOnDmC5nBC1fb,16vUeW77F6Xiz1irHBvTAM,6iC7vapdKp0XlKhxOkp8QJ,79wDq3jpGu0yew1ngQpAAi,4vIsQb5PihLxxKzCeyXOg3,39cmB3ZoTOLwOTq7tMNqKa,1p0jBDjxORjYNJyAphBRpE,7CEV9VwA8XO9wwxTXgYKvY,2wi4d9kls0CWgE4RsghZyR,0PHWXLXOQXGlyUGq7woVFZ,5NOh0KTu5VNFUyRRaOjfDH,7mE57yFVWevAttx4HvLZKi,4SBqydJCEhcroni09XgT2c,4ADsYu1V5CpFLXNve7iK4Z,6IVsYkP3RWt3AwMeHOgDFF,30rbgel2Cop5Ayf61g4KnK,2YUVIkvZ2tPEZYTepX6oT9,2yEHX6MqAXPyD7bm47A2Br,1rGd2CoMxEg2dnaytLY5ZG,0tI7SJjaezftm7xOaaIG2u,48Jf12YHPBCAfAzi255Rvr,4rXfbIpiDnGxZYIflm8LSQ,0RgUxB0pyyzPm5apCmBnHZ,0E9ZjEAyAwOXZ7wJC0PD33,3kcKlOkQQEPVwxwljbGJ5p,6BePGk3eCan4FqaW2X8Qy3,6qItx3M2IZbXBKRnptbnHM,6Dy1jexKYriXAVG6evyUTJ,2gZwBmkSmsVfEPFWGuWTDk,2ayyzfxamdoNRDI0au3wva,2FSvmq9jktuOnl6H45zEaD,5iqrbO0fhuLMiy9tYGanv6,5rW7qTn83sCKtqBoneJs63,6YtUe8dzZ357QD4t56nG00,7nwEab6Y4LXbKUZDNofOag,5B9HpTPTixssrDSFYE35l7,3Dr0xDJwXy6JkiHNJfv5zd,5b97lA5UaQeoj9Pj585Ouo,46bBDuhHpAAoIpGbW4Z3O4,748mdHapucXQri7IAO8yFK,44JSreJxvgl3CxLo5MoQL0,4ufkuONjQMNR2fyXu1bO9w,3wYOGJYD31sLRmBgCvWxa4,7jvCeWOSnJs2N3spqobWnO,1GkHyypTFkUf0QQKwYoXH4,1sx0XsWUusUoPstbvokZjP:
+ None, reason: None
+2025-06-15 17:28:02,373 - core - ERROR - Error type: <class 'spotipy.exceptions.SpotifyException'>
+2025-06-15 17:28:02,373 - core - ERROR - Error args: (403, -1, 'https://api.spotify.com/v1/audio-features/?ids=4uUG5RXrOk84mYEfFvj3cK,6DIMM15oo3kxnCuVypaYGy,0zvii8YjLEmAhHgkREYYmY,0lXjag7QhbY2UQdbKKLpQR,2Qgb6Wtgj5xihMykVII4qb,7HH2qGXywdgAn5b2WHnkQq,2dwW50DVv7TJm68OnjxK1Z,0uF0cDtz7klwRO8MXQ6PSU,3IhM5Mber8KA0NaRNpK2px,4S2qrsdY4BF0T5UFQLtqoU,62OQBLpD3TmkqbtTPqqdRt,0OpcI3rARLsNWgVbPdwHD9,3YVeaqhSFth8QAL45wO19L,4XZIuf6EJw8HKOkRC9Jlj4,3ruSBJtsa5dVwbIl7miXBw,10bd6R7QRiOJCjlCvYGpOw,7CNRVEMSXo0fRJwZyM0L2n,1kmQ47Sk87vxAN7TAiBpaX,6UqRGwjwYL0stXbaodTxwo,7K1TsEgLCoNxr7tvPRJgrL,53ICqRSyTfhrrvNwVSP6am,1A8j067qyiNwQnZT0bzUpZ,6eoY6XnhGFr3HInyECJdbx,79SrdoXn93tgSzksq73X2y,5KxfS8v2vdBgq4TCdtoFWj,33o5QF5ZEAllqV4jDnRYu7,00Nsyeo2kcU4602zMsLWXW,5JPotSaks8ig6cFcSoFzLj,05GvwwTLLID738BbKN1ze0,2d3QlXE6FXFDeodiS66yjM,5PkiQaTxnzdBC5XLjc0WJR,5lM7WOaPyCHi1S0FBrqQ6k,6PuoZT4kgw5DrUEdnQ6e01,4tO2Ol08xzay6zcfhDKpuN,4GZ3YCkuH0VvTluVLwUp4g,1zZBzlQHazjd1C7PM2apDE,2XYUIu1N5iUQw4p0lzpM0E,25Kyv5SeEenT0EETpP2hYn,6CgnHnR0C1qsAiq4UAVO8B,1dt220OBbkTsYz1NLVKIaw,033vo5SJAaHl29XHn9mel8,4xbXuRfZ2ZLktw5QEdGYnX,1h2igaPPB08Gwe4WZynsei,4bOVDHj19JdKriaDQu41wD,27rdGxbavYJeBphck5MZAF,3KruoUtSkm84Az0bJunnxl,7MIhUdNJtaOnDmC5nBC1fb,16vUeW77F6Xiz1irHBvTAM,6iC7vapdKp0XlKhxOkp8QJ,79wDq3jpGu0yew1ngQpAAi,4vIsQb5PihLxxKzCeyXOg3,39cmB3ZoTOLwOTq7tMNqKa,1p0jBDjxORjYNJyAphBRpE,7CEV9VwA8XO9wwxTXgYKvY,2wi4d9kls0CWgE4RsghZyR,0PHWXLXOQXGlyUGq7woVFZ,5NOh0KTu5VNFUyRRaOjfDH,7mE57yFVWevAttx4HvLZKi,4SBqydJCEhcroni09XgT2c,4ADsYu1V5CpFLXNve7iK4Z,6IVsYkP3RWt3AwMeHOgDFF,30rbgel2Cop5Ayf61g4KnK,2YUVIkvZ2tPEZYTepX6oT9,2yEHX6MqAXPyD7bm47A2Br,1rGd2CoMxEg2dnaytLY5ZG,0tI7SJjaezftm7xOaaIG2u,48Jf12YHPBCAfAzi255Rvr,4rXfbIpiDnGxZYIflm8LSQ,0RgUxB0pyyzPm5apCmBnHZ,0E9ZjEAyAwOXZ7wJC0PD33,3kcKlOkQQEPVwxwljbGJ5p,6BePGk3eCan4FqaW2X8Qy3,6qItx3M2IZbXBKRnptbnHM,6Dy1jexKYriXAVG6evyUTJ,2gZwBmkSmsVfEPFWGuWTDk,2ayyzfxamdoNRDI0au3wva,2FSvmq9jktuOnl6H45zEaD,5iqrbO0fhuLMiy9tYGanv6,5rW7qTn83sCKtqBoneJs63,6YtUe8dzZ357QD4t56nG00,7nwEab6Y4LXbKUZDNofOag,5B9HpTPTixssrDSFYE35l7,3Dr0xDJwXy6JkiHNJfv5zd,5b97lA5UaQeoj9Pj585Ouo,46bBDuhHpAAoIpGbW4Z3O4,748mdHapucXQri7IAO8yFK,44JSreJxvgl3CxLo5MoQL0,4ufkuONjQMNR2fyXu1bO9w,3wYOGJYD31sLRmBgCvWxa4,7jvCeWOSnJs2N3spqobWnO,1GkHyypTFkUf0QQKwYoXH4,1sx0XsWUusUoPstbvokZjP:\n None')
+2025-06-15 17:28:02,375 - core - ERROR - Traceback: Traceback (most recent call last):
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/spotipy/client.py", line 274, in _internal_call
+    response.raise_for_status()
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.spotify.com/v1/audio-features/?ids=4uUG5RXrOk84mYEfFvj3cK,6DIMM15oo3kxnCuVypaYGy,0zvii8YjLEmAhHgkREYYmY,0lXjag7QhbY2UQdbKKLpQR,2Qgb6Wtgj5xihMykVII4qb,7HH2qGXywdgAn5b2WHnkQq,2dwW50DVv7TJm68OnjxK1Z,0uF0cDtz7klwRO8MXQ6PSU,3IhM5Mber8KA0NaRNpK2px,4S2qrsdY4BF0T5UFQLtqoU,62OQBLpD3TmkqbtTPqqdRt,0OpcI3rARLsNWgVbPdwHD9,3YVeaqhSFth8QAL45wO19L,4XZIuf6EJw8HKOkRC9Jlj4,3ruSBJtsa5dVwbIl7miXBw,10bd6R7QRiOJCjlCvYGpOw,7CNRVEMSXo0fRJwZyM0L2n,1kmQ47Sk87vxAN7TAiBpaX,6UqRGwjwYL0stXbaodTxwo,7K1TsEgLCoNxr7tvPRJgrL,53ICqRSyTfhrrvNwVSP6am,1A8j067qyiNwQnZT0bzUpZ,6eoY6XnhGFr3HInyECJdbx,79SrdoXn93tgSzksq73X2y,5KxfS8v2vdBgq4TCdtoFWj,33o5QF5ZEAllqV4jDnRYu7,00Nsyeo2kcU4602zMsLWXW,5JPotSaks8ig6cFcSoFzLj,05GvwwTLLID738BbKN1ze0,2d3QlXE6FXFDeodiS66yjM,5PkiQaTxnzdBC5XLjc0WJR,5lM7WOaPyCHi1S0FBrqQ6k,6PuoZT4kgw5DrUEdnQ6e01,4tO2Ol08xzay6zcfhDKpuN,4GZ3YCkuH0VvTluVLwUp4g,1zZBzlQHazjd1C7PM2apDE,2XYUIu1N5iUQw4p0lzpM0E,25Kyv5SeEenT0EETpP2hYn,6CgnHnR0C1qsAiq4UAVO8B,1dt220OBbkTsYz1NLVKIaw,033vo5SJAaHl29XHn9mel8,4xbXuRfZ2ZLktw5QEdGYnX,1h2igaPPB08Gwe4WZynsei,4bOVDHj19JdKriaDQu41wD,27rdGxbavYJeBphck5MZAF,3KruoUtSkm84Az0bJunnxl,7MIhUdNJtaOnDmC5nBC1fb,16vUeW77F6Xiz1irHBvTAM,6iC7vapdKp0XlKhxOkp8QJ,79wDq3jpGu0yew1ngQpAAi,4vIsQb5PihLxxKzCeyXOg3,39cmB3ZoTOLwOTq7tMNqKa,1p0jBDjxORjYNJyAphBRpE,7CEV9VwA8XO9wwxTXgYKvY,2wi4d9kls0CWgE4RsghZyR,0PHWXLXOQXGlyUGq7woVFZ,5NOh0KTu5VNFUyRRaOjfDH,7mE57yFVWevAttx4HvLZKi,4SBqydJCEhcroni09XgT2c,4ADsYu1V5CpFLXNve7iK4Z,6IVsYkP3RWt3AwMeHOgDFF,30rbgel2Cop5Ayf61g4KnK,2YUVIkvZ2tPEZYTepX6oT9,2yEHX6MqAXPyD7bm47A2Br,1rGd2CoMxEg2dnaytLY5ZG,0tI7SJjaezftm7xOaaIG2u,48Jf12YHPBCAfAzi255Rvr,4rXfbIpiDnGxZYIflm8LSQ,0RgUxB0pyyzPm5apCmBnHZ,0E9ZjEAyAwOXZ7wJC0PD33,3kcKlOkQQEPVwxwljbGJ5p,6BePGk3eCan4FqaW2X8Qy3,6qItx3M2IZbXBKRnptbnHM,6Dy1jexKYriXAVG6evyUTJ,2gZwBmkSmsVfEPFWGuWTDk,2ayyzfxamdoNRDI0au3wva,2FSvmq9jktuOnl6H45zEaD,5iqrbO0fhuLMiy9tYGanv6,5rW7qTn83sCKtqBoneJs63,6YtUe8dzZ357QD4t56nG00,7nwEab6Y4LXbKUZDNofOag,5B9HpTPTixssrDSFYE35l7,3Dr0xDJwXy6JkiHNJfv5zd,5b97lA5UaQeoj9Pj585Ouo,46bBDuhHpAAoIpGbW4Z3O4,748mdHapucXQri7IAO8yFK,44JSreJxvgl3CxLo5MoQL0,4ufkuONjQMNR2fyXu1bO9w,3wYOGJYD31sLRmBgCvWxa4,7jvCeWOSnJs2N3spqobWnO,1GkHyypTFkUf0QQKwYoXH4,1sx0XsWUusUoPstbvokZjP
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/core.py", line 237, in fetch_audio_features
+    results = client.audio_features(batch)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/spotipy/client.py", line 1802, in audio_features
+    results = self._get("audio-features/?ids=" + ",".join(tlist))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/spotipy/client.py", line 324, in _get
+    return self._internal_call("GET", url, payload, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/spotipy/client.py", line 294, in _internal_call
+    raise SpotifyException(
+spotipy.exceptions.SpotifyException: http status: 403, code: -1 - https://api.spotify.com/v1/audio-features/?ids=4uUG5RXrOk84mYEfFvj3cK,6DIMM15oo3kxnCuVypaYGy,0zvii8YjLEmAhHgkREYYmY,0lXjag7QhbY2UQdbKKLpQR,2Qgb6Wtgj5xihMykVII4qb,7HH2qGXywdgAn5b2WHnkQq,2dwW50DVv7TJm68OnjxK1Z,0uF0cDtz7klwRO8MXQ6PSU,3IhM5Mber8KA0NaRNpK2px,4S2qrsdY4BF0T5UFQLtqoU,62OQBLpD3TmkqbtTPqqdRt,0OpcI3rARLsNWgVbPdwHD9,3YVeaqhSFth8QAL45wO19L,4XZIuf6EJw8HKOkRC9Jlj4,3ruSBJtsa5dVwbIl7miXBw,10bd6R7QRiOJCjlCvYGpOw,7CNRVEMSXo0fRJwZyM0L2n,1kmQ47Sk87vxAN7TAiBpaX,6UqRGwjwYL0stXbaodTxwo,7K1TsEgLCoNxr7tvPRJgrL,53ICqRSyTfhrrvNwVSP6am,1A8j067qyiNwQnZT0bzUpZ,6eoY6XnhGFr3HInyECJdbx,79SrdoXn93tgSzksq73X2y,5KxfS8v2vdBgq4TCdtoFWj,33o5QF5ZEAllqV4jDnRYu7,00Nsyeo2kcU4602zMsLWXW,5JPotSaks8ig6cFcSoFzLj,05GvwwTLLID738BbKN1ze0,2d3QlXE6FXFDeodiS66yjM,5PkiQaTxnzdBC5XLjc0WJR,5lM7WOaPyCHi1S0FBrqQ6k,6PuoZT4kgw5DrUEdnQ6e01,4tO2Ol08xzay6zcfhDKpuN,4GZ3YCkuH0VvTluVLwUp4g,1zZBzlQHazjd1C7PM2apDE,2XYUIu1N5iUQw4p0lzpM0E,25Kyv5SeEenT0EETpP2hYn,6CgnHnR0C1qsAiq4UAVO8B,1dt220OBbkTsYz1NLVKIaw,033vo5SJAaHl29XHn9mel8,4xbXuRfZ2ZLktw5QEdGYnX,1h2igaPPB08Gwe4WZynsei,4bOVDHj19JdKriaDQu41wD,27rdGxbavYJeBphck5MZAF,3KruoUtSkm84Az0bJunnxl,7MIhUdNJtaOnDmC5nBC1fb,16vUeW77F6Xiz1irHBvTAM,6iC7vapdKp0XlKhxOkp8QJ,79wDq3jpGu0yew1ngQpAAi,4vIsQb5PihLxxKzCeyXOg3,39cmB3ZoTOLwOTq7tMNqKa,1p0jBDjxORjYNJyAphBRpE,7CEV9VwA8XO9wwxTXgYKvY,2wi4d9kls0CWgE4RsghZyR,0PHWXLXOQXGlyUGq7woVFZ,5NOh0KTu5VNFUyRRaOjfDH,7mE57yFVWevAttx4HvLZKi,4SBqydJCEhcroni09XgT2c,4ADsYu1V5CpFLXNve7iK4Z,6IVsYkP3RWt3AwMeHOgDFF,30rbgel2Cop5Ayf61g4KnK,2YUVIkvZ2tPEZYTepX6oT9,2yEHX6MqAXPyD7bm47A2Br,1rGd2CoMxEg2dnaytLY5ZG,0tI7SJjaezftm7xOaaIG2u,48Jf12YHPBCAfAzi255Rvr,4rXfbIpiDnGxZYIflm8LSQ,0RgUxB0pyyzPm5apCmBnHZ,0E9ZjEAyAwOXZ7wJC0PD33,3kcKlOkQQEPVwxwljbGJ5p,6BePGk3eCan4FqaW2X8Qy3,6qItx3M2IZbXBKRnptbnHM,6Dy1jexKYriXAVG6evyUTJ,2gZwBmkSmsVfEPFWGuWTDk,2ayyzfxamdoNRDI0au3wva,2FSvmq9jktuOnl6H45zEaD,5iqrbO0fhuLMiy9tYGanv6,5rW7qTn83sCKtqBoneJs63,6YtUe8dzZ357QD4t56nG00,7nwEab6Y4LXbKUZDNofOag,5B9HpTPTixssrDSFYE35l7,3Dr0xDJwXy6JkiHNJfv5zd,5b97lA5UaQeoj9Pj585Ouo,46bBDuhHpAAoIpGbW4Z3O4,748mdHapucXQri7IAO8yFK,44JSreJxvgl3CxLo5MoQL0,4ufkuONjQMNR2fyXu1bO9w,3wYOGJYD31sLRmBgCvWxa4,7jvCeWOSnJs2N3spqobWnO,1GkHyypTFkUf0QQKwYoXH4,1sx0XsWUusUoPstbvokZjP:
+ None, reason: None
+
+Successfully analyzed 0 tracks
+2025-06-15 17:28:02,375 - __main__ - ERROR - Error in analyze command: name 'export_analysis' is not defined
+2025-06-15 17:28:02,382 - __main__ - ERROR - Traceback (most recent call last):
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/cli.py", line 104, in analyze
+    export_analysis(tracks, audio_features)
+    ^^^^^^^^^^^^^^^
+NameError: name 'export_analysis' is not defined
+
+Traceback (most recent call last):
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/cli.py", line 192, in <module>
+    cli() 
+    ^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/click/core.py", line 1363, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/.venv/lib/python3.12/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jim/Library/CloudStorage/Dropbox/code/## Code in Progress ##/SpotifyPlaylistEnhancer/cli.py", line 104, in analyze
+    export_analysis(tracks, audio_features)
+    ^^^^^^^^^^^^^^^
+NameError: name 'export_analysis' is not defined

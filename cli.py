@@ -17,6 +17,7 @@ from core import (
     PlaylistInfo,
     TrackMetadata
 )
+import traceback
 
 # Configure logging
 logging.basicConfig(
@@ -78,97 +79,42 @@ def cli():
     pass
 
 @cli.command()
-@click.option('--export', is_flag=True, help='Export analysis to JSON')
-@click.option('--playlist', type=int, help='Select playlist by number (0 for Liked Songs)')
-def analyze(export, playlist):
-    """Analyze a playlist or liked songs."""
+@click.option('--export', is_flag=True, help='Export analysis to JSON file')
+@click.option('--playlist', type=int, help='Playlist number to analyze')
+def analyze(export: bool, playlist: int):
+    """Analyze a playlist and display track information."""
     try:
-        # Initialize Spotify client
         client = init_spotify_client()
-        if not client:
-            return
-
-        # Get user's playlists
         playlists = fetch_user_playlists(client)
-        if not playlists:
-            click.echo("No playlists found.")
-            return
-
-        # Display playlists for selection
         click.echo("\nAvailable playlists:")
         for i, playlist_info in enumerate(playlists, 1):
-            click.echo(f"{i}. {playlist_info.name} ({playlist_info.track_count} tracks)")
-
-        # If --playlist option is provided, use it; otherwise prompt
+            click.echo(f"{i}. {playlist_info['name']} ({playlist_info['tracks']['total']} tracks)")
         if playlist is None:
-            selection = click.prompt("\nEnter playlist number (or 0 for Liked Songs)", type=int)
-        else:
-            selection = playlist
-
-        if selection == 0:
-            click.echo("\nAnalyzing Liked Songs...")
-            tracks = fetch_liked_tracks(client)
-            playlist_name = "Liked Songs"
-        else:
-            if selection < 1 or selection > len(playlists):
-                click.echo("Invalid selection.")
-                return
-            playlist_info = playlists[selection - 1]
-            click.echo(f"\nAnalyzing playlist: {playlist_info.name}")
-            tracks = fetch_playlist_tracks_with_metadata(client, playlist_info.id)
-            playlist_name = playlist_info.name
-
-        if not tracks:
-            click.echo("No tracks found.")
-            return
-
-        # Fetch audio features for all tracks
-        logger.info("Fetching audio features...")
-        try:
-            # Debug logging for track URIs
-            track_uris = [track.uri for track in tracks]
-            logger.info(f"Track URIs type: {type(track_uris)}")
-            logger.info(f"First few track URIs: {track_uris[:3]}")
-            logger.info(f"Track URIs length: {len(track_uris)}")
-            
-            audio_features = fetch_audio_features(client, [track.uri for track in tracks])
-        except Exception as e:
-            logger.error(f"Error fetching audio features: {e}")
-            audio_features = {}
-        
-        # Create analysis data
-        analysis = {
-            'playlist_name': playlist_name,
-            'total_tracks': len(tracks),
-            'tracks': []
-        }
-
-        # Process each track
-        for track, features in zip(tracks, audio_features):
-            track_data = {
-                'name': track['track']['name'],
-                'artists': [artist['name'] for artist in track['track']['artists']],
-                'genres': track.get('genres', []),
-                'audio_features': features
-            }
-            analysis['tracks'].append(track_data)
-
-        # Export to JSON if requested
+            playlist = click.prompt("Enter playlist number to analyze", type=int)
+        selected_playlist = playlists[playlist - 1]
+        click.echo(f"\nSelected playlist: {selected_playlist['name']}")
+        click.echo(f"Fetching tracks from playlist: {selected_playlist['name']}")
+        tracks = fetch_playlist_tracks_with_metadata(client, selected_playlist['id'])
+        click.echo(f"Successfully fetched {len(tracks)} tracks")
+        click.echo("Starting audio features analysis...")
+        track_uris = [track['track']['uri'] for track in tracks]
+        audio_features = fetch_audio_features(client, track_uris)
+        click.echo(f"Successfully analyzed {len(audio_features)} tracks")
         if export:
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            filename = f"playlist_analysis_{timestamp}.json"
-            with open(filename, 'w') as f:
-                json.dump(analysis, f, indent=2)
-            click.echo(f"\nAnalysis exported to {filename}")
-
-        # Display summary
-        click.echo(f"\nAnalysis complete!")
-        click.echo(f"Total tracks: {len(tracks)}")
-        click.echo(f"Playlist: {playlist_name}")
-
+            export_analysis(tracks, audio_features)
+        click.echo("Displaying track analysis...")
+        for track, features in zip(tracks, audio_features):
+            click.echo(f"Track: {track['track']['name']} by {', '.join(artist['name'] for artist in track['track']['artists'])}")
+            if features:
+                click.echo(f"  Danceability: {features.get('danceability', 'N/A')}")
+                click.echo(f"  Energy: {features.get('energy', 'N/A')}")
+                click.echo(f"  Valence: {features.get('valence', 'N/A')}")
+            else:
+                click.echo("  No audio features available")
     except Exception as e:
-        click.echo(f"Error: {str(e)}")
-        logging.error(f"Error in analyze command: {str(e)}", exc_info=True)
+        logger.error(f"Error in analyze command: {e}")
+        logger.error(traceback.format_exc())
+        raise
 
 @cli.command()
 @click.option('--name', prompt='New playlist name', help='Name for the new playlist')

@@ -1,27 +1,32 @@
 """
-Streamlit web interface for Spotify Playlist Enhancer.
-A data analysis and LLM-powered tool for playlist management.
+Streamlit app for Spotify Playlist Enhancer.
+Provides a web interface for playlist analysis and management.
 """
 
+import os
+import logging
+from typing import Dict, List, Optional, Tuple, Union, Any
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
-from typing import Dict, List, Optional
-import json
-import logging
+import plotly.express as px
 from datetime import datetime
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
+from dotenv import load_dotenv
 
 from core import (
-    init_spotify_client,
-    fetch_user_playlists,
-    fetch_liked_tracks,
-    get_playlist_track_uris,
-    fetch_audio_features,
-    fetch_playlist_tracks_with_metadata,
+    TrackMetadata,
     PlaylistInfo,
-    TrackMetadata
+    fetch_user_playlists,
+    fetch_playlist_tracks_with_metadata,
+    fetch_liked_tracks,
+    fetch_audio_features,
+    fetch_artist_genres
 )
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -341,9 +346,39 @@ def main() -> None:
     if 'client' not in st.session_state:
         try:
             logger.info("Initializing Spotify client...")
-            st.session_state.client = init_spotify_client()
-            logger.info("Successfully initialized Spotify client")
-            st.sidebar.success("Connected to Spotify")
+            # Initialize Spotify client with minimal scopes for playlist management
+            scopes = [
+                'playlist-read-private',
+                'playlist-modify-private',
+                'user-library-read',
+                'user-library-modify',
+                'user-read-private',
+                'user-read-email',
+                'user-top-read',
+                'user-read-recently-played',
+                'user-read-currently-playing',
+                'user-read-playback-state',
+                'user-modify-playback-state',
+                'streaming',
+                'app-remote-control',
+                'user-read-playback-position'
+            ]
+            
+            try:
+                sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+                    client_id=os.getenv('SPOTIFY_CLIENT_ID'),
+                    client_secret=os.getenv('SPOTIFY_CLIENT_SECRET'),
+                    redirect_uri=os.getenv('SPOTIPY_REDIRECT_URI'),
+                    scope=' '.join(scopes),
+                    cache_path='.spotify_cache'
+                ))
+                st.session_state.client = sp
+                logger.info("Successfully initialized Spotify client")
+                st.sidebar.success("Connected to Spotify")
+            except Exception as e:
+                logger.error(f"Failed to initialize Spotify client: {e}", exc_info=True)
+                st.sidebar.error(f"Failed to connect to Spotify: {str(e)}")
+                return
         except Exception as e:
             logger.error(f"Failed to initialize Spotify client: {e}", exc_info=True)
             st.sidebar.error(f"Failed to connect to Spotify: {str(e)}")
@@ -362,6 +397,7 @@ def main() -> None:
             st.sidebar.warning("No playlists found. Please create a playlist in Spotify first.")
             return
             
+        # Get playlist names for selection
         playlist_names = ["Liked Songs"] + [p.name for p in playlists]
         logger.info(f"Found {len(playlists)} playlists: {playlist_names}")
         st.sidebar.success(f"Found {len(playlists)} playlists")
