@@ -11,6 +11,7 @@ from app import (
     create_audio_features_plot,
     display_track_table
 )
+from core import TrackMetadata
 
 def test_format_duration():
     """Test duration formatting."""
@@ -53,21 +54,19 @@ def test_display_track_table_empty():
 def test_display_track_table_with_data():
     """Test track table display with sample data."""
     # Sample track data
-    tracks = [{
-        'name': 'Test Track',
-        'artists': [{'name': 'Test Artist'}],
-        'album': {'name': 'Test Album', 'album_type': 'album', 'release_date': '2024-01-01'},
-        'duration_ms': 180000,
-        'popularity': 80,
-        'explicit': False,
-        'track_number': 1,
-        'disc_number': 1,
-        'preview_url': 'https://example.com/preview',
-        'external_ids': {'isrc': 'TEST123'},
-        'available_markets': ['US', 'GB'],
-        'uri': 'spotify:track:test123'
-    }]
-    
+    tracks = [
+        TrackMetadata(
+            id='test123',
+            name='Test Track',
+            artist='Test Artist',
+            album='Test Album',
+            duration_ms=180000,
+            popularity=80,
+            added_at=None,
+            genres=[],
+            uri='spotify:track:test123'
+        )
+    ]
     # Sample audio features
     features = {
         'spotify:track:test123': {
@@ -85,24 +84,21 @@ def test_display_track_table_with_data():
             'time_signature': 4
         }
     }
-    
     display_track_table(tracks, features)
 
 def test_display_track_table_missing_features():
     """Test track table display with missing audio features."""
-    tracks = [{
-        'name': 'Test Track',
-        'artists': [{'name': 'Test Artist'}],
-        'album': {'name': 'Test Album', 'album_type': 'album', 'release_date': '2024-01-01'},
-        'duration_ms': 180000,
-        'popularity': 80,
-        'explicit': False,
-        'track_number': 1,
-        'disc_number': 1,
-        'preview_url': 'https://example.com/preview',
-        'external_ids': {'isrc': 'TEST123'},
-        'available_markets': ['US', 'GB'],
-        'uri': 'spotify:track:test123'
-    }]
-    
+    tracks = [
+        TrackMetadata(
+            id='test123',
+            name='Test Track',
+            artist='Test Artist',
+            album='Test Album',
+            duration_ms=180000,
+            popularity=80,
+            added_at=None,
+            genres=[],
+            uri='spotify:track:test123'
+        )
+    ]
     display_track_table(tracks, {}) 

@@ -5,7 +5,9 @@ Shared test fixtures for Spotify Playlist Enhancer tests.
 import pytest
 from unittest.mock import MagicMock
 import os
+from datetime import datetime
 from typing import Dict, List
+from core import PlaylistInfo, TrackMetadata
 
 @pytest.fixture
 def mock_spotify_client():
@@ -18,12 +20,26 @@ def mock_spotify_client():
             {
                 'id': 'playlist1',
                 'name': 'Test Playlist 1',
-                'tracks': {'total': 10}
+                'tracks': {'total': 10},
+                'description': '',
+                'owner': {'display_name': 'Test Owner'},
+                'public': True,
+                'collaborative': False,
+                'created_at': '2024-01-01T00:00:00Z',
+                'updated_at': '2024-01-02T00:00:00Z',
+                'images': [{'url': 'https://example.com/image1.jpg'}]
             },
             {
                 'id': 'playlist2',
                 'name': 'Test Playlist 2',
-                'tracks': {'total': 20}
+                'tracks': {'total': 20},
+                'description': '',
+                'owner': {'display_name': 'Test Owner'},
+                'public': True,
+                'collaborative': False,
+                'created_at': '2024-01-01T00:00:00Z',
+                'updated_at': '2024-01-02T00:00:00Z',
+                'images': [{'url': 'https://example.com/image2.jpg'}]
             }
         ]
     }
@@ -32,8 +48,30 @@ def mock_spotify_client():
     # Mock liked tracks response
     mock_liked_tracks = {
         'items': [
-            {'track': {'uri': 'spotify:track:track1'}},
-            {'track': {'uri': 'spotify:track:track2'}}
+            {
+                'track': {
+                    'id': 'track1',
+                    'name': 'Test Track 1',
+                    'artists': [{'name': 'Test Artist 1'}],
+                    'album': {'name': 'Test Album 1'},
+                    'duration_ms': 180000,
+                    'popularity': 80,
+                    'uri': 'spotify:track:track1'
+                },
+                'added_at': '2024-01-01T00:00:00Z'
+            },
+            {
+                'track': {
+                    'id': 'track2',
+                    'name': 'Test Track 2',
+                    'artists': [{'name': 'Test Artist 2'}],
+                    'album': {'name': 'Test Album 2'},
+                    'duration_ms': 240000,
+                    'popularity': 75,
+                    'uri': 'spotify:track:track2'
+                },
+                'added_at': '2024-01-02T00:00:00Z'
+            }
         ]
     }
     client.current_user_saved_tracks.return_value = mock_liked_tracks
@@ -41,11 +79,33 @@ def mock_spotify_client():
     # Mock playlist tracks response
     mock_playlist_tracks = {
         'items': [
-            {'track': {'uri': 'spotify:track:track1'}},
-            {'track': {'uri': 'spotify:track:track2'}}
+            {
+                'track': {
+                    'id': 'track1',
+                    'name': 'Test Track 1',
+                    'artists': [{'name': 'Test Artist 1'}],
+                    'album': {'name': 'Test Album 1'},
+                    'duration_ms': 180000,
+                    'popularity': 80,
+                    'uri': 'spotify:track:track1'
+                },
+                'added_at': '2024-01-01T00:00:00Z'
+            },
+            {
+                'track': {
+                    'id': 'track2',
+                    'name': 'Test Track 2',
+                    'artists': [{'name': 'Test Artist 2'}],
+                    'album': {'name': 'Test Album 2'},
+                    'duration_ms': 240000,
+                    'popularity': 75,
+                    'uri': 'spotify:track:track2'
+                },
+                'added_at': '2024-01-02T00:00:00Z'
+            }
         ]
     }
-    client.playlist_items.return_value = mock_playlist_tracks
+    client.playlist_tracks.return_value = mock_playlist_tracks
     
     # Mock audio features response
     mock_audio_features = [
@@ -72,4 +132,5 @@ def mock_spotify_client():
 def mock_env_vars(monkeypatch):
     """Set up mock environment variables for testing."""
     monkeypatch.setenv('SPOTIFY_CLIENT_ID', 'test_client_id')
-    monkeypatch.setenv('SPOTIFY_CLIENT_SECRET', 'test_client_secret') 
+    monkeypatch.setenv('SPOTIFY_CLIENT_SECRET', 'test_client_secret')
+    monkeypatch.setenv('SPOTIPY_REDIRECT_URI', 'http://localhost:8888/callback') 
